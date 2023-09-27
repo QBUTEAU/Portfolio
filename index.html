@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="scripts/jquery.scrollTo.min.js"></script>
+    <script src="scripts/jquery.localScroll.min.js"></script>
+    <script src="scripts/jquery.parallax-1.1.3.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Outfit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/480db9540f.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="images/logoqb.png">
+    
+    <title>QBUTEAU | Portfolio</title>
+</head>
+<body>
+
+    <header id="navbar">
+        <a id="logo" href="#presentation">QBUTEAU</a>
+        <label for="toggle"><i class="fa-solid fa-bars" style="color: var(--blanc);"></i></label>
+        <input type="checkbox" id="toggle">
+        <div class="liens">
+            <a href="#a-propos">à propos de moi</a>
+            <a href="#competences">mes compétences</a>
+            <a href="#realisations">mes réalisations</a>
+            <a href="#liens-contact">me contacter</a>
+        </div>
+    </header>
+
+    <section>
+
+        <!-- FLECHE POUR REMONTER EN HAUT DE PAGE -->
+        <a href="#presentation" id="backToTop" class="hidden">
+            <div>
+                <i class="fa-solid fa-arrow-up" style="color: var(--rouge);"></i>
+            </div>
+        </a>
+
+        <!-- POP UP DE CTRL C CTRL V DU DISCORD -->
+        <div id="copy-popup">
+            L'ID Discord de Quentin a été copié avec succès !
+        </div>
+
+        <div id="presentation">
+            <div id="nom-role">
+                <h1>Quentin Buteau</h1>
+                <h6>Développeur Front-End Junior</h6>
+            </div>
+            <a href="#a-propos"><i class="fa-solid fa-arrow-down" style="color: var(--blanc); font-size: 35px;"></i></a>
+        </div>
+
+        <div id="a-propos">
+            <div class="contenu">
+                <h2>à propos de moi</h2>
+                <p>Bienvenue sur mon portfolio ! Je suis Quentin, j'ai 18 ans et je suis en deuxième
+                    année d'un BUT Métiers du Multimédia et de l'Internet au sein de l'IUT de Troyes.
+                    Titulaire d'un Baccalauréat Général avec spécialités Mathématiques et Numériques
+                    et Sciences Informatiques, j'ai souhaité faire cette formation grâce à ma récente
+                    découverte des langages HTML et CSS et plus globalement à ma passion pour le numérique.
+                    Outre le numérique, je suis passionné par le sport, la photo, le cinéma
+                    et les sports mécaniques.
+                </p>
+                <a href="http://mmi22c03.mmi-troyes.fr/ressources/QBUTEAU-CV.pdf" target="_blank">MON CV</a>
+            </div>
+            <div id="photo">
+            </div>
+        </div>
+
+        <div id="competences">
+            <div id="contenu-competences">
+                <h2>Mes compétences</h2>
+                <div id="divSkills1">
+                    <div class="divSkills1">
+                        <div class="skillsTitle">FRONT-END</div>
+                        <div>
+                            <i class="fa-brands fa-html5" style="color: #FF5733;"></i>
+                            <i class="fa-brands fa-css3-alt" style="color: #2965f1;"></i>
+                            <i class="fa-brands fa-square-js" style="color: #F0DB4F;"></i>
+                        </div>
+                    </div>
+                    <div class="divSkills1">
+                        <div class="skillsTitle">BACK-END</div>
+                        <div>
+                            <i class="fa-brands fa-php" style="color: #AEB2D5;"></i>
+                            <i class="fa-solid fa-database" style="color: #2685e4;"></i>
+                            <i class="fa-brands fa-docker" style="color: #0db7ed;"></i>
+                            <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
+                            <i class="fa-brands fa-wordpress" style="color: #00749C;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="divSkills2">
+                    <div class="divSkills2">
+                        <div class="skillsTitle">OFFICE 365</div>
+                        <div>Word | PowerPoint | Excel</div>
+                    </div>
+                    <div class="divSkills2">
+                        <div class="skillsTitle">ADOBE CREATIVE CLOUD</div>
+                        <div>Photoshop | Illustrator | Lightroom | Premiere Pro | Figma</div>
+                    </div>
+                    <div class="divSkills2">
+                        <div class="skillsTitle">AUTRES OUTILS</div>
+                        <div>Notion | Github | Click Up</div>
+                    </div>
+            </div>
+        </div></div>
+
+
+
+        <div id="realisations">
+            <h2>Mes réalisations</h2>
+
+            <div class="devCard">
+                <div class="devLegende">
+                    <h3>Mingle.</h3>
+                    <h5>Juin 2023</h5>
+                    <p>Site WordPress réalisé dans le but de promouvoir une agence de 5 membres
+                        travaillant dans le développement web, le graphisme et la communication,
+                    le tout dans la création d'un site web de covoiturage pour la formation MMI de Troyes.</p>
+                </div>
+                <div class="devLiens" id="mingle">
+                    <a href="https://mmi22c03.sae202.ovh/agence" target="_blank"><i class="fa-brands fa-wordpress"></i></a>
+                </div>
+            </div>
+
+            <div class="devCard">
+                <div class="devLegende">
+                    <h3>Circuit Library</h3>
+                    <h5>Mars 2023</h5>
+                    <p>Site qui met en avant les plus grands circuits automobiles du monde,
+                        grâce à une base de données MySQL et un back-end en PHP, qui possède
+                    également une partie CRUD conçue pour la gestion de la table. Le site répond
+                    au concept "mobile first".</p>
+                </div>
+                <div class="devLiens" id="circuitLibrary">
+                    <a href="https://mmi22c03.sae203.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="devCard">
+                <div class="devLegende">
+                    <h3>FormulaPedia</h3>
+                    <h5>Janvier 2023</h5>
+                    <p>Site présentant la Formule 1, et plus précisément l'ensemble des champions
+                        du monde depuis 1950, grâce au plug-in JavaScript Json. Une page contact sécurisée
+                        est également présente, tout comme une page galerie, de référence et de partenaires
+                        qui concerne une évaluation réalisée en groupe.
+                    </p>
+                </div>
+                <div class="devLiens" id="formulaPedia">
+                    <a href="https://mmi22c03.sae105.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
+                    <a href="https://github.com/QBUTEAU/FormulaPedia" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="devCard" style="margin-top: 60px;">
+                <div class="devLegende">
+                    <h3>Vroom Duck</h3>
+                    <h5>Juin 2023</h5>
+                    <p>Site de covoiturage réservé aux étudiants et enseignants de la formation MMI de Troyes,
+                        réalisé durant la même période que le site de Mingle.
+                        Je me suis chargé de la partie rédactionnelle du site (accueil, mails) et de la création
+                        de la base de données quant à la liste de parkings.
+                    </p>
+                    <p class="membres">
+                        Avec <a href="https://elise-gratet-taburel.fr" target="_blank">Elise Gratet-Taburel</a>
+                        et <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
+                    </p>
+                </div>
+                <div class="devLiens" id="vroomDuck">
+                    <a href="https://mmi22c03.sae202.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="devCard">
+                <div class="devLegende">
+                    <h3>Planet Tomorrow</h3>
+                    <h5>Avril 2023</h5>
+                    <p>Site réalisé dans le cadre de l'apprentissage de l'éco-conception autour des sites webs.
+                        En répondant à la question "On n'arrête pas le progrès. Vraiment ?", je me suis appuyé
+                        sur des vidéos et articles parlant de l'impact du numérique sur l'environnement pour écrire
+                        un article. Le site devait contenir une démarche écologique juste, le tout en l'expliquant
+                        sur une page dédiée. 
+                    </p>
+                    <p class="membres">
+                        Avec <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
+                    </p>
+                </div>
+                <div class="devLiens" id="planetTomorrow">
+                    <a href="http://www.atfmrmc.com/wr204-blog-tech/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
+                    <a href="https://github.com/atfmrmc/wr204-blog-tech" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="travaux_mmi">
+            <h2>MES TRAVAUX EN BUT MMI</h2>
+            <a href="http://mmi22c03.mmi-troyes.fr" target="_blank">SITE DE TRAVAUX<br>BUT MMI</a>
+            <a href="http://mmi22c03.mmi-troyes.fr/portfolio/QBUTEAU_Portfolio.pdf" target="_blank">Portfolio de compétences<br>B.U.T.1 <strong>(.pdf)</strong></a>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Me suivre et me contacter</h3>
+        <div id="liens-contact">
+            <a href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
+                <i class="fa-brands fa-instagram" style="color: var(--noir);"></i></a>
+            <a href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
+                <i class="fa-brands fa-linkedin-in" style="color: var(--noir);"></i></a>
+            <a href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
+                <i class="fa-brands fa-github" style="color: var(--noir);"></i></a>
+            <button onclick="copierTexte()" class="reseaux" id="discord">
+                <i class="fa-brands fa-discord" style="color: var(--noir);"></i></button>
+            <a href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
+                <i class="fa-brands fa-behance" style="color: var(--noir);"></i></a>
+        </div>
+        <p><i class="fa-solid fa-phone" style="color: var(--noir);"></i> +33750440501</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--noir);"></i> buteauquentin10@gmail.com</p>
+        <hr>
+        <div id="copyright">&copy; 2023 - Quentin BUTEAU | Tous droits réservés</div>
+    </footer>
+
+    <script>
+         $(document).ready(function()
+            {$.localScroll();
+                $('#presentation').parallax("50%", 0.3);
+                $('#a-propos').parallax("50%", 0.3);
+                $('#competences').parallax("50%", 0.3);
+                $('#realisations').parallax("50%", 0.3);
+            }
+        );
+    </script>
+</body>
+</html>
