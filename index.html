@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script src="scripts/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -28,11 +28,11 @@
 <body>
 
     <header id="navbar">
-        <a id="logo" href="#presentation">QBUTEAU</a>
+        <a class="navbar__logo" href="#presentation">QBUTEAU</a>
         <label for="toggle"><i class="fa-solid fa-bars" style="color: var(--blanc);"></i></label>
         <input type="checkbox" id="toggle">
-        <div class="liens">
-            <a href="#a-propos">à propos de moi</a>
+        <div class="navbar__liens">
+            <a href="#apropos">à propos de moi</a>
             <a href="#competences">mes compétences</a>
             <a href="#realisations">mes réalisations</a>
             <a href="#liens-contact">me contacter</a>
@@ -54,15 +54,15 @@
         </div>
 
         <div id="presentation">
-            <div id="nom-role">
+            <div class="presentation__nom-role">
                 <h1>Quentin Buteau</h1>
                 <h6>Développeur Front-End Junior</h6>
             </div>
-            <a href="#a-propos"><i class="fa-solid fa-arrow-down" style="color: var(--blanc); font-size: 35px;"></i></a>
+            <a href="#apropos"><i class="fa-solid fa-arrow-down" style="color: var(--blanc); font-size: 35px;"></i></a>
         </div>
 
-        <div id="a-propos">
-            <div class="contenu">
+        <div id="apropos">
+            <div class="apropos__contenu">
                 <h2>à propos de moi</h2>
                 <p>Bienvenue sur mon portfolio ! Je suis Quentin, j'ai 18 ans et je suis en deuxième
                     année d'un BUT Métiers du Multimédia et de l'Internet au sein de l'IUT de Troyes.
@@ -74,12 +74,12 @@
                 </p>
                 <a href="http://mmi22c03.mmi-troyes.fr/ressources/QBUTEAU-CV.pdf" target="_blank">MON CV</a>
             </div>
-            <div id="photo">
+            <div class="apropos__photo">
             </div>
         </div>
 
         <div id="competences">
-            <div id="contenu-competences">
+            <div class="competences__contenu">
                 <h2>Mes compétences</h2>
                 <div id="divSkills1">
                     <div class="divSkills1">
@@ -88,6 +88,7 @@
                             <i class="fa-brands fa-html5" style="color: #FF5733;"></i>
                             <i class="fa-brands fa-css3-alt" style="color: #2965f1;"></i>
                             <i class="fa-brands fa-square-js" style="color: #F0DB4F;"></i>
+                            <i class="fa-brands fa-sass" style="color: #d728c0;"></i>
                         </div>
                     </div>
                     <div class="divSkills1">
@@ -130,7 +131,7 @@
                         travaillant dans le développement web, le graphisme et la communication,
                     le tout dans la création d'un site web de covoiturage pour la formation MMI de Troyes.</p>
                 </div>
-                <div class="devLiens" id="mingle">
+                <div class="devLiens mingle">
                     <a href="https://mmi22c03.sae202.ovh/agence" target="_blank"><i class="fa-brands fa-wordpress"></i></a>
                 </div>
             </div>
@@ -144,7 +145,7 @@
                     également une partie CRUD conçue pour la gestion de la table. Le site répond
                     au concept "mobile first".</p>
                 </div>
-                <div class="devLiens" id="circuitLibrary">
+                <div class="devLiens circuit-library">
                     <a href="https://mmi22c03.sae203.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
@@ -159,7 +160,7 @@
                         qui concerne une évaluation réalisée en groupe.
                     </p>
                 </div>
-                <div class="devLiens" id="formulaPedia">
+                <div class="devLiens formula-pedia">
                     <a href="https://mmi22c03.sae105.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
                     <a href="https://github.com/QBUTEAU/FormulaPedia" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
                 </div>
@@ -181,7 +182,7 @@
                         et <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
                     </p>
                 </div>
-                <div class="devLiens" id="vroomDuck">
+                <div class="devLiens vroom-duck">
                     <a href="https://mmi22c03.sae202.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
@@ -200,7 +201,7 @@
                         Avec <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
                     </p>
                 </div>
-                <div class="devLiens" id="planetTomorrow">
+                <div class="devLiens planet-tomorrow">
                     <a href="http://www.atfmrmc.com/wr204-blog-tech/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
                     <a href="https://github.com/atfmrmc/wr204-blog-tech" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
                 </div>
@@ -210,8 +211,10 @@
 
         <div id="travaux_mmi">
             <h2>MES TRAVAUX EN BUT MMI</h2>
-            <a href="http://mmi22c03.mmi-troyes.fr" target="_blank">SITE DE TRAVAUX<br>BUT MMI</a>
-            <a href="http://mmi22c03.mmi-troyes.fr/portfolio/QBUTEAU_Portfolio.pdf" target="_blank">Portfolio de compétences<br>B.U.T.1 <strong>(.pdf)</strong></a>
+            <div>
+                <a href="http://mmi22c03.mmi-troyes.fr" target="_blank">SITE DE TRAVAUX<br>BUT MMI</a>
+                <a href="http://mmi22c03.mmi-troyes.fr/portfolio/QBUTEAU_Portfolio.pdf" target="_blank">Portfolio de compétences<br>B.U.T.1 <strong>(.pdf)</strong></a>
+            </div>
         </div>
     </section>
 
