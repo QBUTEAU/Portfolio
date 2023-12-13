@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
@@ -88,12 +92,11 @@ body{
 #navbar{
     top: 0;
     position: fixed;
-    height: 50px;
+    height: 70px;
     z-index: 10;
     display: flex;
     color: var(--blanc);
-    background-color: var(--noirFonce);
-    border-bottom: var(--noirFonce) 3px solid;
+    background-color: transparent;
     width: 100%;
     align-items: center;
     transition: background 0.2s ease, height 0.2s ease, color 0.2s ease;
@@ -110,14 +113,14 @@ body{
     color: var(--blanc);
     margin-left: 35px;
 }
-#navbar.scrolled .navbar__logo, #navbar.scrolled .navbar__liens a{
-    color: var(--noir);
-}
-#navbar.scrolled label i{
-    color: var(--noir)!important;
-}
-#navbar.scrolled .navbar__liens a::after{
-    background-color: var(--noir);
+#navbar.scrolled{
+    height: 50px;
+    .navbar__logo, .navbar__liens a, label i{
+        color: var(--noir)!important;
+    }
+    .navbar__liens a::after{
+        background-color: var(--noir);
+    }
 }
 
 .navbar__liens{
@@ -199,7 +202,7 @@ label, #toggle{
 }
 
 .apropos__photo{
-    background-image: url(../images/qbuteau-presentation.webp);
+    background-image: url(../img/qbuteau-presentation.webp);
     background-size: 200%;
     background-position: center;
     background-repeat: no-repeat;
@@ -254,7 +257,7 @@ p{
     width: max-content;
     border: 2px var(--rouge) solid;
     border-radius: 20px;
-    padding: 6px 20px;
+    padding: 8px 30px;
     font-weight: bold;
     color: var(--blanc);
     background-color: var(--noir);
@@ -400,7 +403,7 @@ $list_projet: mingle, circuit-library, formula-pedia, vroom-duck, planet-tomorro
 
 @each $projet in $list_projet{
     .#{$projet}{
-        background-image: url(../images/#{$projet}.jpg);
+        background-image: url(../img/#{$projet}.jpg);
     }
 }
 
@@ -460,7 +463,9 @@ $list_projet: mingle, circuit-library, formula-pedia, vroom-duck, planet-tomorro
 /* -------------------- FOOTER -------------------- */
 
 footer{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     margin-top: 30vh;
     color: var(--noir);
     font-family: 'Montserrat';
@@ -468,29 +473,12 @@ footer{
     text-align: center;
     background-color: var(--blanc);
     border-top: 3px var(--rouge) solid;
-    padding: 20px 0;
-    h3{
-        font-size: 20px;
-        margin-bottom: 7px;
-        text-transform: uppercase;
-    }
-    p{
-        color: var(--noir);
-        text-align: center;
-        margin: 5px 0;
-        font-weight: bold;
-        font-family: "Montserrat";
-    }
-    hr{
-        margin: 0 auto;
-        width: 40%;
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
+    padding: 13px 0;
 }
+
 .reseaux{
     cursor: pointer;
-    margin: 10px;
+    margin: 0 10px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -520,20 +508,17 @@ footer{
     }
 }
 #liens-contact{
-    margin: 0 auto;
-    width: 55%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 15px;
     i{
-        font-size: 25px;
+        font-size: 22px;
         transition: 0.25s;
     }
 }
 #copyright{
-    margin-bottom: 10px;
     font-weight: 700;
+    font-size: 15px;
 }
 
 
@@ -621,6 +606,10 @@ footer{
         gap: 45px;
         margin-bottom: 60vh;
     }
+    .apropos__contenu{
+        width: 70%;
+        padding-right: 0;
+    }
     #contenu-competences{
         width: 90%;
     }
@@ -658,7 +647,7 @@ footer{
             font-size: 14px;
         }
         p{
-            font-size: 12px;
+            font-size: 14px;
         }
         & > .membres{
             text-align: center;
@@ -683,8 +672,10 @@ footer{
         margin-top: 10px;
     }
 
-    #liens-contact{
-        width: 75%;
+    footer{
+        flex-direction: column;
+        padding: 30px 0;
+        gap: 10px;
     }
 
     .reseaux{

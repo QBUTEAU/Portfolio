@@ -33,7 +33,6 @@ function fadeInDivOnScroll() {
 
   function handleScroll() {
     var scrollPosition = window.pageYOffset;
-
     if (scrollPosition > scrollThreshold) {
       var opacity = (scrollPosition - scrollThreshold) / 30; // Contrôle de l'opacité en fonction de la position de défilement
       divElement.style.opacity = opacity;
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', fadeInDivOnScroll);
 window.addEventListener('scroll', function() {
   var navbar = document.getElementById('navbar');
   var distanceFromTop = navbar.offsetTop;
-  var scrollThreshold = 360; //Défilement nécessaire avant d'afficher la couleur (en pixels)
+  var scrollThreshold = 150; //Défilement nécessaire avant d'afficher la couleur (en pixels)
   
   if (window.pageYOffset > distanceFromTop + scrollThreshold) {
     navbar.classList.add('scrolled');
@@ -62,3 +61,20 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
+
+
+/* ----- FONCTION POUR L'ANIMATION LORS DU REVEAL ----- */
+
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 1000,
+  delay : 100,
+  reset: false
+});
+
+sr.reveal(`.apropos__contenu`, {origin: 'left'});
+sr.reveal(`.apropos__photo`, {origin: 'right'});
+sr.reveal(`.divSkills1 , .divSkills2`, {interval: '100'});
+sr.reveal(`.devCard`, {interval: '100'});
+sr.reveal(`.travaux_mmi`, {origin: 'bottom'});

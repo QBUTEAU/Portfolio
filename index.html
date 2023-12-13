@@ -7,12 +7,6 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script src="scripts/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="scripts/jquery.scrollTo.min.js"></script>
-    <script src="scripts/jquery.localScroll.min.js"></script>
-    <script src="scripts/jquery.parallax-1.1.3.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -21,7 +15,7 @@
 
     <script src="https://kit.fontawesome.com/480db9540f.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="images/logoqb.png">
+    <link rel="icon" type="image/png" href="img/logoqb.png">
     
     <title>QBUTEAU | Portfolio</title>
 </head>
@@ -64,7 +58,7 @@
         <div id="apropos">
             <div class="apropos__contenu">
                 <h2>à propos de moi</h2>
-                <p>Bienvenue sur mon portfolio ! Je suis Quentin, j'ai 18 ans et je suis en deuxième
+                <p>Bienvenue sur mon portfolio ! Je suis Quentin, j'ai 19 ans et je suis en deuxième
                     année d'un BUT Métiers du Multimédia et de l'Internet au sein de l'IUT de Troyes.
                     Titulaire d'un Baccalauréat Général avec spécialités Mathématiques et Numériques
                     et Sciences Informatiques, j'ai souhaité faire cette formation grâce à ma récente
@@ -166,50 +160,9 @@
                 </div>
             </div>
 
-            <hr>
-
-            <div class="devCard" style="margin-top: 60px;">
-                <div class="devLegende">
-                    <h3>Vroom Duck</h3>
-                    <h5>Juin 2023</h5>
-                    <p>Site de covoiturage réservé aux étudiants et enseignants de la formation MMI de Troyes,
-                        réalisé durant la même période que le site de Mingle.
-                        Je me suis chargé de la partie rédactionnelle du site (accueil, mails) et de la création
-                        de la base de données quant à la liste de parkings.
-                    </p>
-                    <p class="membres">
-                        Avec <a href="https://elise-gratet-taburel.fr" target="_blank">Elise Gratet-Taburel</a>
-                        et <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
-                    </p>
-                </div>
-                <div class="devLiens vroom-duck">
-                    <a href="https://mmi22c03.sae202.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-
-            <div class="devCard">
-                <div class="devLegende">
-                    <h3>Planet Tomorrow</h3>
-                    <h5>Avril 2023</h5>
-                    <p>Site réalisé dans le cadre de l'apprentissage de l'éco-conception autour des sites webs.
-                        En répondant à la question "On n'arrête pas le progrès. Vraiment ?", je me suis appuyé
-                        sur des vidéos et articles parlant de l'impact du numérique sur l'environnement pour écrire
-                        un article. Le site devait contenir une démarche écologique juste, le tout en l'expliquant
-                        sur une page dédiée. 
-                    </p>
-                    <p class="membres">
-                        Avec <a href="http://atfmrmc.com" target="_blank">Artur Moreira Machado</a>
-                    </p>
-                </div>
-                <div class="devLiens planet-tomorrow">
-                    <a href="http://www.atfmrmc.com/wr204-blog-tech/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
-                    <a href="https://github.com/atfmrmc/wr204-blog-tech" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
-                </div>
-            </div>
-
         </div>
 
-        <div id="travaux_mmi">
+        <div id="travaux_mmi" class="travaux_mmi">
             <h2>MES TRAVAUX EN BUT MMI</h2>
             <div>
                 <a href="http://mmi22c03.mmi-troyes.fr" target="_blank">SITE DE TRAVAUX<br>BUT MMI</a>
@@ -219,7 +172,7 @@
     </section>
 
     <footer>
-        <h3>Me suivre et me contacter</h3>
+        <div id="copyright">&copy; 2023 - Quentin BUTEAU | Tous droits réservés</div>
         <div id="liens-contact">
             <a href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
                 <i class="fa-brands fa-instagram" style="color: var(--noir);"></i></a>
@@ -232,21 +185,10 @@
             <a href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
                 <i class="fa-brands fa-behance" style="color: var(--noir);"></i></a>
         </div>
-        <p><i class="fa-solid fa-phone" style="color: var(--noir);"></i> +33750440501</p>
-        <p><i class="fa-solid fa-envelope" style="color: var(--noir);"></i> buteauquentin10@gmail.com</p>
-        <hr>
-        <div id="copyright">&copy; 2023 - Quentin BUTEAU | Tous droits réservés</div>
     </footer>
 
-    <script>
-         $(document).ready(function()
-            {$.localScroll();
-                $('#presentation').parallax("50%", 0.3);
-                $('#a-propos').parallax("50%", 0.3);
-                $('#competences').parallax("50%", 0.3);
-                $('#realisations').parallax("50%", 0.3);
-            }
-        );
-    </script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 </html>
