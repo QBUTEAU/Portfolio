@@ -92,7 +92,7 @@ body{
 #navbar{
     top: 0;
     position: fixed;
-    height: 70px;
+    height: 50px;
     z-index: 10;
     display: flex;
     color: var(--blanc);
@@ -114,7 +114,6 @@ body{
     margin-left: 35px;
 }
 #navbar.scrolled{
-    height: 50px;
     .navbar__logo, .navbar__liens a, label i{
         color: var(--noir)!important;
     }
@@ -125,8 +124,9 @@ body{
 
 .navbar__liens{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 45%;
+    width: 50%;
     right: 35px;
     position: absolute;
     a{
@@ -137,17 +137,20 @@ body{
         font-size: 14px;
         font-weight: bold;
         transition: color 0.2s ease;
-        &::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--blanc);
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
+    }
+}
+
+@media screen and (min-width:990px){
+    a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--blanc);
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
         &:hover::after {
             width: 100%;
         }
@@ -233,6 +236,10 @@ h2{
     margin-bottom: 30px;
     text-decoration: underline;
     text-underline-offset: 10px;
+}
+h4{
+    font-size: 16px;
+    margin: 0;
 }
 p{
     color: var(--blanc);
@@ -362,11 +369,8 @@ p{
     border-radius: 30px;
     margin-bottom: 60px;
     transition: 0.25s;
-    &:hover{
-        transform: scale(1.05);
-        cursor: crosshair;
-    }
 }
+
 .devLegende{
    text-align: left;
    display: flex;
@@ -399,7 +403,7 @@ p{
 }
 
 
-$list_projet: mingle, circuit-library, formula-pedia, vroom-duck, planet-tomorrow;
+$list_projet: mingle, circuit-library, formula-pedia, sortirdansaube;
 
 @each $projet in $list_projet{
     .#{$projet}{
@@ -425,6 +429,91 @@ $list_projet: mingle, circuit-library, formula-pedia, vroom-duck, planet-tomorro
         }
     }
 }
+
+
+/* -------------------- AUTRES REALISATIONS -------------------- */
+
+$list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
+
+@each $autres in $list-autres{
+    .#{$autres}{
+        background-image: url(../img/#{$autres}.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+} 
+
+#autres-realisations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 80%;
+
+    .autresList{
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .autresCard{
+            display: flex;
+            flex-direction: column;
+            height: 175px;
+            width: 150px;
+            border: 2px var(--rouge) solid;
+            color: white;
+            border-radius: 20px;
+
+            h6{
+                margin: 0;
+                font-style: italic;
+                font-weight: 500;
+                a{
+                    color: var(--blanc);
+                }
+            }
+
+            .autresCard__img{
+                height: 55%;
+                border-radius: 18px 18px 0 0;
+                border-bottom: 2px var(--rouge) solid;
+                > div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+                    height: 100%; 
+                    width: 100%;
+                    border-radius: 17px 17px 0 0;
+                    background-color: rgba(0, 0, 0, 0.712);
+                    i{
+                        font-size: 26px;
+                        color: var(--blanc);
+                        transition: 0.25s;
+                        &:hover{
+                            color: var(--rouge);
+                        }
+                    }
+                }
+            }
+
+            .autresCard__legende{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 45%;
+                text-align: center;
+            }
+        }
+    }
+
+}
+
 
 /* -------------------- TRAVAUX -------------------- */
 
@@ -541,18 +630,28 @@ footer{
 
 @media screen and (max-width:1300px){
     .navbar__liens{
-        width: 60%;
+        width: 65%;
     }
 }
 
 
 @media screen and (max-width:990px){
+
+    #navbar{
+        height: 60px;
+        background-color: var(--blanc);
+        border-bottom: 3px var(--rouge) solid;
+    }
+
     .navbar__liens{
         display: none;
         a{
-            margin: 0 auto;
-            padding: 40px;
+            margin: 53px;
         }
+    }
+
+    .navbar__logo{
+        color: var(--noir);
     }
 
     label {
@@ -561,25 +660,29 @@ footer{
         right: 35px;
         font-size: 26px;
         cursor: pointer;
+        i{
+            color: var(--noir)!important;
+        }
     }
     #toggle:checked + .navbar__liens{
         display: flex;
-        background-color: var(--noirFonce);
-        top: 52.5px;
+        background-color: var(--noir);
+        top: 62.5px;
         flex-direction: column;
         position: absolute;
-        height: 400px;
+        height: 500px;
         width: 100%;
         right: 0;
-        border-bottom: 2px var(--rouge) solid;
+        border-bottom: 3px var(--rouge) solid;
     }
     #navbar.scrolled .navbar__liens a{
-        color: var(--blanc);
+        color: var(--blanc)!important;
     }
     
 
     #presentation{
         padding-bottom: 30px;
+        min-height: 100vh;
     }
     h2{
         font-size: 35px;
@@ -641,13 +744,13 @@ footer{
         padding: 15px;
         border-radius: 27px 27px 0 0;
         h3{
-            font-size: 25px;
+            font-size: 35px;
         }
         h5{
             font-size: 14px;
         }
         p{
-            font-size: 14px;
+            font-size: 11px;
         }
         & > .membres{
             text-align: center;
@@ -676,6 +779,11 @@ footer{
         flex-direction: column;
         padding: 30px 0;
         gap: 10px;
+    }
+
+    #liens-contact{
+        width: 63%;
+        gap: 5px;
     }
 
     .reseaux{

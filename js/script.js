@@ -21,8 +21,43 @@ function copierTexte() {
     setTimeout(function(){
       popup.style.display = 'none';
     }, 2500);
-      
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Sélectionnez le bouton toggle
+  var toggleButton = document.getElementById('toggle');
+  
+  // Ajoutez un gestionnaire d'événements de clic au bouton toggle
+  toggleButton.addEventListener('click', function () {
+      // Sélectionnez la barre de navigation
+      var navbarLinks = document.querySelector('.navbar__liens');
+
+      // Vérifiez si le toggle est coché
+      if (toggleButton.checked) {
+          // Si le toggle est coché, affichez la barre de navigation en flex
+          navbarLinks.style.display = 'flex';
+      } else {
+          // Sinon, masquez la barre de navigation
+          navbarLinks.style.display = 'none';
+      }
+  });
+
+  // Sélectionnez tous les liens de la barre de navigation
+  var navLinks = document.querySelectorAll('.navbar__liens a');
+
+  // Ajoutez un gestionnaire d'événements de clic à chaque lien
+  navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+          // Masquez la barre de navigation en modifiant le style
+          document.querySelector('.navbar__liens').style.display = 'none';
+          
+          // Décochez le toggle
+          document.getElementById('toggle').checked = false;
+      });
+  });
+});
+
 
 
 /* ----- FONCTION AFFICHAGE BOUTON 'BACK TO TOP' ----- */
@@ -78,3 +113,4 @@ sr.reveal(`.apropos__photo`, {origin: 'right'});
 sr.reveal(`.divSkills1 , .divSkills2`, {interval: '100'});
 sr.reveal(`.devCard`, {interval: '100'});
 sr.reveal(`.travaux_mmi`, {origin: 'bottom'});
+sr.reveal(`.autresCard`, {interval: '100'});

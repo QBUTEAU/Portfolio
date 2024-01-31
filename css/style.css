@@ -92,7 +92,7 @@ body {
 #navbar {
   top: 0;
   position: fixed;
-  height: 70px;
+  height: 50px;
   z-index: 10;
   display: flex;
   color: var(--blanc);
@@ -114,9 +114,6 @@ body {
   margin-left: 35px;
 }
 
-#navbar.scrolled {
-  height: 50px;
-}
 #navbar.scrolled .navbar__logo, #navbar.scrolled .navbar__liens a, #navbar.scrolled label i {
   color: var(--noir) !important;
 }
@@ -126,8 +123,9 @@ body {
 
 .navbar__liens {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 45%;
+  width: 50%;
   right: 35px;
   position: absolute;
 }
@@ -140,21 +138,23 @@ body {
   font-weight: bold;
   transition: color 0.2s ease;
 }
-.navbar__liens a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: var(--blanc);
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-.navbar__liens a:hover::after {
-  width: 100%;
-}
 
+@media screen and (min-width: 990px) {
+  a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--blanc);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  a::after:hover::after {
+    width: 100%;
+  }
+}
 label, #toggle {
   display: none;
 }
@@ -233,6 +233,11 @@ h2 {
   margin-bottom: 30px;
   text-decoration: underline;
   text-underline-offset: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 0;
 }
 
 p {
@@ -372,10 +377,6 @@ p {
   margin-bottom: 60px;
   transition: 0.25s;
 }
-.devCard:hover {
-  transform: scale(1.05);
-  cursor: crosshair;
-}
 
 .devLegende {
   text-align: left;
@@ -420,12 +421,8 @@ p {
   background-image: url(../img/formula-pedia.jpg);
 }
 
-.vroom-duck {
-  background-image: url(../img/vroom-duck.jpg);
-}
-
-.planet-tomorrow {
-  background-image: url(../img/planet-tomorrow.jpg);
+.sortirdansaube {
+  background-image: url(../img/sortirdansaube.jpg);
 }
 
 .devLiens {
@@ -445,6 +442,113 @@ p {
 }
 .devLiens i:hover {
   color: var(--rouge) !important;
+}
+
+/* -------------------- AUTRES REALISATIONS -------------------- */
+.komola {
+  background-image: url(../img/komola.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toystory {
+  background-image: url(../img/toystory.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chat {
+  background-image: url(../img/chat.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.webdoc {
+  background-image: url(../img/webdoc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sae303 {
+  background-image: url(../img/sae303.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.styleselector {
+  background-image: url(../img/styleselector.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#autres-realisations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 80%;
+}
+#autres-realisations .autresList {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#autres-realisations .autresList .autresCard {
+  display: flex;
+  flex-direction: column;
+  height: 175px;
+  width: 150px;
+  border: 2px var(--rouge) solid;
+  color: white;
+  border-radius: 20px;
+}
+#autres-realisations .autresList .autresCard h6 {
+  margin: 0;
+  font-style: italic;
+  font-weight: 500;
+}
+#autres-realisations .autresList .autresCard h6 a {
+  color: var(--blanc);
+}
+#autres-realisations .autresList .autresCard .autresCard__img {
+  height: 55%;
+  border-radius: 18px 18px 0 0;
+  border-bottom: 2px var(--rouge) solid;
+}
+#autres-realisations .autresList .autresCard .autresCard__img > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+  border-radius: 17px 17px 0 0;
+  background-color: rgba(0, 0, 0, 0.712);
+}
+#autres-realisations .autresList .autresCard .autresCard__img > div i {
+  font-size: 26px;
+  color: var(--blanc);
+  transition: 0.25s;
+}
+#autres-realisations .autresList .autresCard .autresCard__img > div i:hover {
+  color: var(--rouge);
+}
+#autres-realisations .autresList .autresCard .autresCard__legende {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 45%;
+  text-align: center;
 }
 
 /* -------------------- TRAVAUX -------------------- */
@@ -558,16 +662,23 @@ footer {
 /* -------------------- MOBILE -------------------- */
 @media screen and (max-width: 1300px) {
   .navbar__liens {
-    width: 60%;
+    width: 65%;
   }
 }
 @media screen and (max-width: 990px) {
+  #navbar {
+    height: 60px;
+    background-color: var(--blanc);
+    border-bottom: 3px var(--rouge) solid;
+  }
   .navbar__liens {
     display: none;
   }
   .navbar__liens a {
-    margin: 0 auto;
-    padding: 40px;
+    margin: 53px;
+  }
+  .navbar__logo {
+    color: var(--noir);
   }
   label {
     display: flex;
@@ -576,22 +687,26 @@ footer {
     font-size: 26px;
     cursor: pointer;
   }
+  label i {
+    color: var(--noir) !important;
+  }
   #toggle:checked + .navbar__liens {
     display: flex;
-    background-color: var(--noirFonce);
-    top: 52.5px;
+    background-color: var(--noir);
+    top: 62.5px;
     flex-direction: column;
     position: absolute;
-    height: 400px;
+    height: 500px;
     width: 100%;
     right: 0;
-    border-bottom: 2px var(--rouge) solid;
+    border-bottom: 3px var(--rouge) solid;
   }
   #navbar.scrolled .navbar__liens a {
-    color: var(--blanc);
+    color: var(--blanc) !important;
   }
   #presentation {
     padding-bottom: 30px;
+    min-height: 100vh;
   }
   h2 {
     font-size: 35px;
@@ -653,13 +768,13 @@ footer {
     border-radius: 27px 27px 0 0;
   }
   .devLegende h3 {
-    font-size: 25px;
+    font-size: 35px;
   }
   .devLegende h5 {
     font-size: 14px;
   }
   .devLegende p {
-    font-size: 14px;
+    font-size: 11px;
   }
   .devLegende > .membres {
     text-align: center;
@@ -685,6 +800,10 @@ footer {
     flex-direction: column;
     padding: 30px 0;
     gap: 10px;
+  }
+  #liens-contact {
+    width: 63%;
+    gap: 5px;
   }
   .reseaux {
     margin: 5px;
