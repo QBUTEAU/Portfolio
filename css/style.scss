@@ -1,3 +1,13 @@
+$noirFonce : #070e13;
+$noir : rgb(10, 14, 23);
+
+$rougeFonce2 : rgb(88, 0, 0);
+$rougeFonce1 : rgb(136, 0, 0);
+$rouge : #E12319;
+
+$blanc: #fff;
+$blancFonce: #ffffffc6;
+
 html{
     scroll-behavior: smooth;
 }
@@ -7,38 +17,26 @@ body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
     overflow-y: scroll;
-    background: var(--noir);
+    background: $noir;
     width: 100vw;
-}
-
-:root{
-    --noirFonce: #070e13;
-    --noir: rgb(10, 14, 23);
-
-    --rougeFonce2 : rgb(88, 0, 0);
-    --rougeFonce1 : rgb(136, 0, 0);
-    --rouge : #E12319;
-
-    --blanc: #fff;
-    --blancFonce: #ffffffc6;
 }
 
 ::-webkit-scrollbar {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--blanc);
+    background: $blanc;
 }
 ::-webkit-scrollbar-thumb{
-    background: var(--rouge);
+    background: $rouge;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--rougeFonce1); 
+    background: $rougeFonce1; 
 }
 
 ::selection{
-    background-color: var(--rouge);
-    color: var(--blanc);
+    background-color: $rouge;
+    color: $blanc;
 }
 
 /* ----- HEADER ----- */
@@ -47,12 +45,12 @@ body{
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    background-color: var(--blanc);
+    background-color: $blanc;
     line-height: 47px;
     width: 43px;
     height: 43px;
     border-radius: 40px;
-    border: var(--rouge) 3px solid;
+    border: $rouge 3px solid;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -95,13 +93,13 @@ body{
     height: 50px;
     z-index: 10;
     display: flex;
-    color: var(--blanc);
+    color: $blanc;
     background-color: transparent;
     width: 100%;
     align-items: center;
     transition: background 0.2s ease, height 0.2s ease, color 0.2s ease;
     &.scrolled{
-        background: var(--blanc);
+        background: $blanc;
         border-bottom: #E12319 3px solid;
     }
 }
@@ -110,15 +108,15 @@ body{
     font-size: 22px;
     font-weight: bold;
     text-decoration: none;
-    color: var(--blanc);
+    color: $blanc;
     margin-left: 35px;
 }
 #navbar.scrolled{
     .navbar__logo, .navbar__liens a, label i{
-        color: var(--noir)!important;
+        color: $noir!important;
     }
     .navbar__liens a::after{
-        background-color: var(--noir);
+        background-color: $noir;
     }
 }
 
@@ -133,7 +131,7 @@ body{
         position: relative;
         text-decoration: none;
         text-transform: uppercase;
-        color: var(--blanc);
+        color: $blanc;
         font-size: 14px;
         font-weight: bold;
         transition: color 0.2s ease;
@@ -146,7 +144,7 @@ body{
         position: absolute;
         width: 0;
         height: 2px;
-        background-color: var(--blanc);
+        background-color: $blanc;
         bottom: -5px;
         left: 50%;
         transform: translateX(-50%);
@@ -167,7 +165,7 @@ label, #toggle{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--blanc);
+    color: $blanc;
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
@@ -183,16 +181,20 @@ label, #toggle{
     margin-bottom: 30px;
     h1{
         margin: 0;
-        color: var(--blanc);
+        color: $blanc;
         font-size: 60px;
     }
     h6{
         margin: 0;
-        color: var(--blanc);
+        color: $blanc;
         font-family: 'Outfit';
         font-size: 16px;
         font-weight: 100;
     }
+}
+
+.hidden i{
+    color: $rouge;
 }
 
 @keyframes arrowAnimation {
@@ -209,7 +211,7 @@ label, #toggle{
     background-size: 200%;
     background-position: center;
     background-repeat: no-repeat;
-    border: 3px var(--rouge) solid;
+    border: 3px $rouge solid;
     border-radius: 40px;
     height: 340px;
     width: 260px;
@@ -229,7 +231,7 @@ hr{
 }
 h2{
     text-align: center;
-    color: var(--blanc);
+    color: $blanc;
     text-transform: uppercase;
     line-height: 140%;
     font-size: 40px;
@@ -242,8 +244,8 @@ h4{
     margin: 0;
 }
 p{
-    color: var(--blanc);
-    font-size: 16px;
+    color: $blanc;
+    font-size: 15px;
     font-family: 'Outfit';
     line-height: 150%;
     text-align: justify;
@@ -262,19 +264,19 @@ p{
     margin: 0 auto;
     text-align: center;
     width: max-content;
-    border: 2px var(--rouge) solid;
+    border: 2px $rouge solid;
     border-radius: 20px;
     padding: 8px 30px;
     font-weight: bold;
-    color: var(--blanc);
-    background-color: var(--noir);
+    color: $blanc;
+    background-color: $noir;
     font-family: 'Montserrat';
     transition: 0.25s;
     text-decoration: none;
     display: block;
     &:hover{
-        background-color: var(--blancFonce);
-        color: var(--rouge);
+        background-color: $blancFonce;
+        color: $rouge;
     }
 }
 
@@ -298,9 +300,9 @@ p{
     margin-bottom: 10px;
     margin-right: 4px;
     margin-left: 4px;
-    border: 3px solid var(--rouge);
+    border: 3px solid $rouge;
     border-radius: 25px;
-    color: var(--blanc);
+    color: $blanc;
     font-family: 'Outfit';
     transition: 0.25s;
     i{
@@ -316,14 +318,15 @@ p{
 }
 .divSkills2 div{
     padding: 0 10px;
+    font-size: 14px;
 }
 .divSkills1:hover, .divSkills2:hover, #divSkills:hover{
-    background-color: var(--blancFonce);
-    color: var(--rouge);
+    background-color: $blancFonce;
+    color: $rouge;
     cursor: crosshair;
 }
 .divSkills1:hover i{
-    color: var(--rouge)!important;
+    color: $rouge!important;
 }
 #divSkills{
     margin: 0 auto;
@@ -365,45 +368,71 @@ p{
     max-height: 400px;
     width: 80%;
     max-width: 1500px;
-    border: 3px var(--rouge) solid;
+    border: 3px $rouge solid;
     border-radius: 30px;
     margin-bottom: 60px;
     transition: 0.25s;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 
 .devLegende{
-   text-align: left;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   font-size: 12px;
-   padding: 0 20px;
-   background-color: var(--noirFonce);
-   border-radius: 27px 0 0 27px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    gap: 15px;
+    background-color: $noirFonce;
+    border-radius: 27px 0 0 27px;
+
+    .devTechno{
+        display: flex;
+        gap: 15px;
+        i{
+            font-size: 25px;
+            color: $blanc;
+        }
+    }
+
     h3{
         position: relative;
-        color: var(--blanc);
+        color: $blanc;
         margin: 0;
         font-size: 40px;
         font-family: 'Montserrat';
     }
     h5{
-        color: var(--blancFonce);
-        margin: 10px 0;
+        color: $blancFonce;
+        margin: 0;
         font-size: 15px;
         font-family: 'Outfit';
+    }
+    h6{
+        color: $blancFonce;
+        margin: 0;
+        font-size: 12px;
+        font-family: 'Montserrat';
+        a{
+            color: $blancFonce;
+            font-weight: 700;
+        }
+    }
+    p{
+        margin: 0;
     }
 }
 
 .membres{
     font-size: 13px;
     a{
-        color: var(--blanc);
+        color: $blanc;
     }
 }
 
 
-$list_projet: mingle, circuit-library, formula-pedia, sortirdansaube;
+$list_projet: mingle, circuit-library, sae303;
 
 @each $projet in $list_projet{
     .#{$projet}{
@@ -419,13 +448,13 @@ $list_projet: mingle, circuit-library, formula-pedia, sortirdansaube;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0 27px 27px 0;
-    border-left: 3px var(--rouge) solid;
+    border-left: 3px $rouge solid;
     i{
         font-size: 40px!important;
-        color: var(--blanc);
+        color: $blanc;
         transition: 0.25s;
         &:hover{
-            color: var(--rouge)!important;
+            color: $rouge!important;
         }
     }
 }
@@ -433,7 +462,7 @@ $list_projet: mingle, circuit-library, formula-pedia, sortirdansaube;
 
 /* -------------------- AUTRES REALISATIONS -------------------- */
 
-$list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
+$list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
 
 @each $autres in $list-autres{
     .#{$autres}{
@@ -464,7 +493,7 @@ $list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
             flex-direction: column;
             height: 175px;
             width: 150px;
-            border: 2px var(--rouge) solid;
+            border: 2px $rouge solid;
             color: white;
             border-radius: 20px;
 
@@ -473,14 +502,14 @@ $list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
                 font-style: italic;
                 font-weight: 500;
                 a{
-                    color: var(--blanc);
+                    color: $blanc;
                 }
             }
 
             .autresCard__img{
                 height: 55%;
                 border-radius: 18px 18px 0 0;
-                border-bottom: 2px var(--rouge) solid;
+                border-bottom: 2px $rouge solid;
                 > div{
                     display: flex;
                     justify-content: center;
@@ -492,10 +521,10 @@ $list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
                     background-color: rgba(0, 0, 0, 0.712);
                     i{
                         font-size: 26px;
-                        color: var(--blanc);
+                        color: $blanc;
                         transition: 0.25s;
                         &:hover{
-                            color: var(--rouge);
+                            color: $rouge;
                         }
                     }
                 }
@@ -533,9 +562,9 @@ $list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
         font-size: 15px;
         font-weight: 600;
         text-transform: uppercase;
-        background-color: var(--noir);
-        color: var(--blanc);
-        border: var(--rouge) 3px solid;
+        background-color: $noir;
+        color: $blanc;
+        border: $rouge 3px solid;
         border-radius: 20px;
         padding: 8px 20px;
         margin: 4px 15px;
@@ -543,8 +572,8 @@ $list-autres: komola, toystory, chat, webdoc, sae303, styleselector;
         text-align: center;
         transition: 0.25s;
         &:hover{
-            background-color: var(--blancFonce);
-            color: var(--rouge);
+            background-color: $blancFonce;
+            color: $rouge;
         }
     }
 }
@@ -556,13 +585,13 @@ footer{
     align-items: center;
     justify-content: space-around;
     margin-top: 30vh;
-    color: var(--noir);
+    color: $noir;
     font-family: 'Montserrat';
     font-weight: 400;
     text-align: center;
-    background-color: var(--blanc);
-    border-top: 3px var(--rouge) solid;
-    padding: 13px 0;
+    background-color: $blanc;
+    border-top: 3px $rouge solid;
+    padding: 10px 0;
 }
 
 .reseaux{
@@ -574,26 +603,29 @@ footer{
     text-decoration: none;
     font-weight: 700;
     font-size: 15px;
-    color: var(--noir);
+    color: $noir;
     padding: 5px 15px;
-    border: var(--rouge) 3px solid;
+    border: $rouge 3px solid;
     border-radius: 60px;
     white-space: nowrap;
     width: min-content;
     transition: 0.25s;
+    i{
+        color: $noir;
+    }
     &:hover{
-        background-color: var(--rouge);
-        color: var(--blanc);
+        background-color: $rouge;
+        color: $blanc;
     }
     &:hover i{
-        color: var(--blanc)!important;
+        color: $blanc!important;
     }
 }
 #discord{
-    background-color: var(--blanc);
+    background-color: $blanc;
     font-family: 'Montserrat';
     &:hover{
-        background-color: var(--rouge);
+        background-color: $rouge;
     }
 }
 #liens-contact{
@@ -601,7 +633,7 @@ footer{
     justify-content: center;
     flex-wrap: wrap;
     i{
-        font-size: 22px;
+        font-size: 20px;
         transition: 0.25s;
     }
 }
@@ -617,7 +649,7 @@ footer{
     .devCard:nth-child(odd) .devLiens{
         border-radius: 27px 0 0 27px;
         grid-row: 1;
-        border-right: 3px var(--rouge) solid;
+        border-right: 3px $rouge solid;
         border-left: 0;
     }
     .devCard:nth-child(odd) .devLegende{
@@ -639,19 +671,16 @@ footer{
 
     #navbar{
         height: 60px;
-        background-color: var(--blanc);
-        border-bottom: 3px var(--rouge) solid;
+        background-color: $blanc;
+        border-bottom: 3px $rouge solid;
     }
 
     .navbar__liens{
         display: none;
-        a{
-            margin: 53px;
-        }
     }
 
     .navbar__logo{
-        color: var(--noir);
+        color: $noir;
     }
 
     label {
@@ -661,22 +690,23 @@ footer{
         font-size: 26px;
         cursor: pointer;
         i{
-            color: var(--noir)!important;
+            color: $noir!important;
         }
     }
     #toggle:checked + .navbar__liens{
-        display: flex;
-        background-color: var(--noir);
+        justify-content: center;
+        background-color: $noir;
+        gap: 100px;
         top: 62.5px;
         flex-direction: column;
         position: absolute;
         height: 500px;
         width: 100%;
         right: 0;
-        border-bottom: 3px var(--rouge) solid;
+        border-bottom: 3px $rouge solid;
     }
     #navbar.scrolled .navbar__liens a{
-        color: var(--blanc)!important;
+        color: $blanc!important;
     }
     
 
@@ -707,7 +737,7 @@ footer{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 45px;
-        margin-bottom: 60vh;
+        margin-bottom: 20vh;
     }
     .apropos__contenu{
         width: 70%;
@@ -743,14 +773,17 @@ footer{
         text-align: center;
         padding: 15px;
         border-radius: 27px 27px 0 0;
+        .devTechno{
+            justify-content: center;
+        }
         h3{
-            font-size: 35px;
+            font-size: 32px;
         }
         h5{
             font-size: 14px;
         }
         p{
-            font-size: 11px;
+            font-size: 12px;
         }
         & > .membres{
             text-align: center;
@@ -760,7 +793,7 @@ footer{
     .devLiens{
         border-radius: 0 0 27px 27px;
         border-left: 0;
-        border-top: 3px var(--rouge) solid;
+        border-top: 3px $rouge solid;
         i{
             font-size: 30px!important;
         }

@@ -42,21 +42,25 @@ document.addEventListener('DOMContentLoaded', function () {
           navbarLinks.style.display = 'none';
       }
   });
+});
 
   // Sélectionnez tous les liens de la barre de navigation
-  var navLinks = document.querySelectorAll('.navbar__liens a');
+var navLinks = document.querySelectorAll('.navbar__liens a');
 
-  // Ajoutez un gestionnaire d'événements de clic à chaque lien
-  navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-          // Masquez la barre de navigation en modifiant le style
-          document.querySelector('.navbar__liens').style.display = 'none';
-          
-          // Décochez le toggle
-          document.getElementById('toggle').checked = false;
-      });
-  });
+// Ajoutez un gestionnaire d'événements de clic à chaque lien
+navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+        // Vérifiez la largeur de la fenêtre
+        if (window.innerWidth <= 990) {
+            // Masquez la barre de navigation en modifiant le style
+            document.querySelector('.navbar__liens').style.display = 'none';
+            
+            // Décochez le toggle
+            document.getElementById('toggle').checked = false;
+        }
+    });
 });
+
 
 
 
@@ -113,4 +117,4 @@ sr.reveal(`.apropos__photo`, {origin: 'right'});
 sr.reveal(`.divSkills1 , .divSkills2`, {interval: '100'});
 sr.reveal(`.devCard`, {interval: '100'});
 sr.reveal(`.travaux_mmi`, {origin: 'bottom'});
-sr.reveal(`.autresCard`, {interval: '100'});
+sr.reveal(`.autresCard`, { interval: '100' });
