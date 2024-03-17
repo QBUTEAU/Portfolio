@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
 
     <script src="https://kit.fontawesome.com/480db9540f.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="img/logoqb.png">
+    <link rel="icon" type="image/png" href="assets/img/logoqb.png">
     
     <title>QBUTEAU | Portfolio</title>
 </head>
@@ -45,8 +45,12 @@
             <div class="presentation__nom-role">
                 <h1>Quentin Buteau</h1>
                 <h6>Développeur Front-End Junior</h6>
+                <div class="presentation__reseaux">
+                    <a href="https://github.com/QBUTEAU"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/quentin-buteau/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
             </div>
-            <a href="#apropos"><i class="fa-solid fa-arrow-down" style="color: #fff; font-size: 35px;"></i></a>
+            <!-- <a href="#apropos"><i class="fa-solid fa-arrow-down" style="color: #fff; font-size: 35px;"></i></a> -->
         </div>
 
         <div id="apropos">
@@ -85,6 +89,7 @@
                             <i class="fa-solid fa-database" style="color: #2685e4;"></i>
                             <i class="fa-brands fa-docker" style="color: #0db7ed;"></i>
                             <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
+                            <i class="fa-brands fa-symfony" style="color: #FFF"></i>
                             <i class="fa-brands fa-wordpress" style="color: #00749C;"></i>
                         </div>
                     </div>
@@ -139,8 +144,6 @@
                         <i class="fa-brands fa-css3-alt"></i>
                         <i class="fa-brands fa-wordpress"></i>
                         <i class="fa-brands fa-square-js"></i>
-                        <i class="fa-brands fa-docker"></i>
-                        <i class="fa-brands fa-ubuntu"></i>
                     </div>
                     <p>Site WordPress réalisé dans le but de promouvoir une agence de 5 membres
                         travaillant dans le développement web, le graphisme et la communication,
@@ -160,8 +163,6 @@
                         <i class="fa-brands fa-css3-alt"></i>
                         <i class="fa-brands fa-php"></i>
                         <i class="fa-solid fa-database"></i>
-                        <i class="fa-brands fa-docker"></i>
-                        <i class="fa-brands fa-ubuntu"></i>
                     </div>
                     <p>Site qui met en avant les plus grands circuits automobiles du monde,
                         grâce à une base de données MySQL et un back-end en PHP, qui possède
@@ -183,7 +184,7 @@
                 <div class="autresCard">
                     <div class="autresCard__img komola">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/portfolio/realisations/komola" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="http://qbuteau.fr/realisations/komola" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             <a href="https://github.com/QBUTEAU/Cours-SCSS-S3/tree/main/TP%20Final" target="_blank"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -207,7 +208,7 @@
                 <div class="autresCard">
                     <div class="autresCard__img toystory">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/portfolio/realisations/toystory" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="http://qbuteau.fr/realisations/toystory" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             <a href="https://github.com/QBUTEAU/DevFront-S3/tree/main/S%C3%A9quence%202%20-%20Toy%20Story" target="_blank"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -219,7 +220,7 @@
                 <div class="autresCard">
                     <div class="autresCard__img styleselector">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/portfolio/realisations/styleselector" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="http://qbuteau.fr/realisations/styleselector" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             <a href="https://github.com/QBUTEAU/StyleSelector" target="_blank"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -248,22 +249,27 @@
         <div id="travaux_mmi" class="travaux_mmi">
             <h2>MES TRAVAUX EN BUT MMI</h2>
             <div>
-                <a href="http://qbuteau.fr" target="_blank">SITE DE TRAVAUX<br>BUT MMI</a>
-                <a href="http://qbuteau.fr/portfolio/QBUTEAU_BUT1.pdf" target="_blank">Portfolio<br>B.U.T.1 <strong>(.pdf)</strong></a>
-                <a href="http://qbuteau.fr/portfolio/QBUTEAU_BUT2.pdf" target="_blank">Portfolio<br>B.U.T.2 (S3) <strong>(.PDF)</strong></a>
+                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT1.pdf" target="_blank">Portfolio<br>B.U.T.1 <strong>(.pdf)</strong></a>
+                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT2.pdf" target="_blank">Portfolio<br>B.U.T.2 (S3) <strong>(.PDF)</strong></a>
+            </div>
+            <h4>Modules de Développement Front / Intégration</h4>
+            <div class="travaux-mmi__modules">
+                <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r112" target="_blank">WR112</a>
+                <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r212" target="_blank">WR212</a>
+                <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r312" target="_blank">WR312</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div id="copyright">&copy; 2023 - Quentin BUTEAU | Tous droits réservés</div>
+        <div id="copyright">&copy; 2023-2024 - Quentin BUTEAU</div>
         <div id="liens-contact">
             <a href="mailto:buteauquentin10@gmail.com" target="_blank" class="reseaux">
                 <i class="fa-solid fa-envelope"></i></a>
             <a href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
                 <i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
-                <i class="fa-brands fa-linkedin-in"></i></a>
+                <i class="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
                 <i class="fa-brands fa-github"></i></a>
             <button onclick="copierTexte()" class="reseaux" id="discord">
@@ -278,8 +284,8 @@
         L'ID Discord de Quentin a été copié avec succès !
     </div>
 
-    <script src="js/scrollreveal.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
