@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Outfit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Outfit&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/480db9540f.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lenis@1.1.1/dist/lenis.min.js"></script>
 
-    <link rel="icon" type="image/png" href="assets/img/logoqb.png">
-    
+    <link rel="icon" type="image/png" href="http://qbuteau.fr/assets/img/logoqb.png">
+
     <title>QBUTEAU | Portfolio</title>
 </head>
+
 <body>
 
     <header id="navbar">
         <a class="navbar__logo" href="#presentation">QBUTEAU</a>
-        <label for="toggle"><i class="fa-solid fa-bars" style="color: var(--blanc);"></i></label>
+        <label for="toggle"><i class="fa-solid fa-bars"></i></label>
         <input type="checkbox" id="toggle">
         <navbar class="navbar__liens">
             <a href="#apropos">à propos de moi</a>
@@ -58,11 +62,14 @@
                 <h2>à propos de moi</h2>
                 <p>Bienvenue sur mon portfolio ! Je suis Quentin, j'ai 19 ans et je suis en deuxième
                     année d'un BUT Métiers du Multimédia et de l'Internet au sein de l'IUT de Troyes.
-                    Je suis actuellement à la recherche d'un stage de 10 semaines, du 15 avril au 21 juin 2024,
-                    dans le domaine du développement web, de l'UI et l'UX design ou de la communication.
+                    Je suis actuellement à la recherche d'une alternance dans le développement web, d'une durée
+                    d'un an, à compter de septembre 2024.
                     Je suis passionné par le numérique, le sport, la photo, le cinéma et les sports mécaniques.
                 </p>
-                <a href="http://qbuteau.fr/ressources/QBUTEAU_CV.pdf" target="_blank">MON CV</a>
+                <div class="cv">
+                    <a href="http://qbuteau.fr/ressources/QBUTEAU_CV.pdf" target="_blank">MON CV</a>
+                    <a href="http://qbuteau.fr/ressources/QBUTEAU_CV-N&B.pdf" target="_blank">MON CV - N&B</a>
+                </div>
             </div>
             <div class="apropos__photo">
             </div>
@@ -116,22 +123,31 @@
 
             <div class="devCard">
                 <div class="devLegende">
-                    <h3>Dataviz</h3>
-                    <h5>Octobre 2023</h5>
+                    <h3>GreenScore</h3>
+                    <h5>De février à avril 2024</h5>
                     <div class="devTechno">
+                        <i class="fa-brands fa-vuejs"></i>
                         <i class="fa-brands fa-html5"></i>
-                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-sass"></i>
                         <i class="fa-brands fa-square-js"></i>
                     </div>
-                    <p>Projet universitaire sur la dataviz et des statistiques des véhicules électriques
-                        en France. Réalisé en binôme, avec des technologies Front-End telles que HTML, CSS,
-                        et JavaScript, ainsi que la librairie Chart.js pour la réalisation de graphiques dynamiques.
+                    <p>Projet universitaire sur la réalisation d'un questionnaire en ligne sur l'écologie,
+                        à but lucratif et éducatif. Développé avec le framework Vue.js, il est responsive,
+                        français et anglais.
                     </p>
-                    <h6>Développé avec <a href="https://github.com/EmilienRozier">Emilien Rozier</a>.</h6>
+                    <h6>Développé avec <a href="https://mmi22g05.mmi-troyes.fr" target="_blank">Jathushan
+                            Selvarajah</a>.<br>
+                        Rédactionnel et illustrations : <a href="https://mmi22g11.mmi-troyes.fr/portfolio"
+                            target="_blank">Axel
+                            Tribondeau</a>
+                        et <a href="http://mmi22g07.mmi-troyes.fr/portfolio" target="_blank">Okesse Smith</a>.
+                    </h6>
                 </div>
-                <div class="devLiens sae303">
-                    <a href="https://mmi22c03.mmi-troyes.fr/sae303" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
-                    <a href="https://github.com/QBUTEAU/Vehicules-Electriques_SAE303" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                <div class="devLiens greenscore">
+                    <a href="https://mmi22c03.sae401.ovh" target="_blank"><i
+                            class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
+                    <a href="https://github.com/QBUTEAU/GreenScore_SAE401" target="_blank"><i
+                            class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
                 </div>
             </div>
 
@@ -147,10 +163,11 @@
                     </div>
                     <p>Site WordPress réalisé dans le but de promouvoir une agence de 5 membres
                         travaillant dans le développement web, le graphisme et la communication,
-                    le tout dans la création d'un site web de covoiturage pour la formation MMI de Troyes.</p>
+                        le tout dans la création d'un site web de covoiturage pour la formation MMI de Troyes.</p>
                 </div>
                 <div class="devLiens mingle">
-                    <a href="https://mmi22c03.sae202.ovh/agence" target="_blank"><i class="fa-brands fa-wordpress"></i></a>
+                    <a href="https://mmi22c03.sae202.ovh/agence" target="_blank"><i
+                            class="fa-brands fa-wordpress"></i></a>
                 </div>
             </div>
 
@@ -166,12 +183,14 @@
                     </div>
                     <p>Site qui met en avant les plus grands circuits automobiles du monde,
                         grâce à une base de données MySQL et un back-end en PHP, qui possède
-                    également une partie CRUD conçue pour la gestion de la table. Le site répond
-                    au concept "mobile first".</p>
+                        également une partie CRUD conçue pour la gestion de la table. Le site répond
+                        au concept "mobile first".</p>
                 </div>
                 <div class="devLiens circuit-library">
-                    <a href="https://mmi22c03.sae203.ovh" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
-                    <a href="https://github.com/QBUTEAU/CircuitLibrary_SAE203" target="_blank"><i class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                    <a href="https://mmi22c03.sae203.ovh" target="_blank"><i
+                            class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
+                    <a href="https://github.com/QBUTEAU/CircuitLibrary_SAE203" target="_blank"><i
+                            class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
                 </div>
             </div>
         </div>
@@ -180,24 +199,29 @@
             <h2>Autres Réalisations</h2>
 
             <div class="autresList">
-                
+
+
                 <div class="autresCard">
-                    <div class="autresCard__img komola">
+                    <div class="autresCard__img unity">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/realisations/komola" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/QBUTEAU/Cours-SCSS-S3/tree/main/TP%20Final" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="http://qbuteau.fr/r409eval" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://www.youtube.com/watch?v=NprnuFPTV2A" target="_blank"><i
+                                    class="fa-solid fa-video"></i></a>
                         </div>
                     </div>
                     <div class="autresCard__legende">
-                        <h4>Komola</h4>
+                        <h4>Jeu sur Unity</h4>
                     </div>
                 </div>
 
                 <div class="autresCard">
                     <div class="autresCard__img webdoc">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/wr308" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/QBUTEAU/WebDocumentaire" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="http://qbuteau.fr/wr308" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://github.com/QBUTEAU/WebDocumentaire" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                     <div class="autresCard__legende">
@@ -206,22 +230,26 @@
                 </div>
 
                 <div class="autresCard">
-                    <div class="autresCard__img toystory">
+                    <div class="autresCard__img sae303">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/realisations/toystory" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/QBUTEAU/DevFront-S3/tree/main/S%C3%A9quence%202%20-%20Toy%20Story" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://mmi22c03.mmi-troyes.fr/sae303" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://github.com/QBUTEAU/Vehicules-Electriques_SAE303" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                     <div class="autresCard__legende">
-                        <h4>Toy Story</h4>
+                        <h4>Dataviz</h4>
                     </div>
                 </div>
 
                 <div class="autresCard">
                     <div class="autresCard__img styleselector">
                         <div class="autresCard-img__fond">
-                            <a href="http://qbuteau.fr/realisations/styleselector" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/QBUTEAU/StyleSelector" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="http://qbuteau.fr/realisations/styleselector" target="_blank"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://github.com/QBUTEAU/StyleSelector" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                     <div class="autresCard__legende">
@@ -249,34 +277,44 @@
         <div id="travaux_mmi" class="travaux_mmi">
             <h2>MES TRAVAUX EN BUT MMI</h2>
             <div>
-                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT1.pdf" target="_blank">Portfolio<br>B.U.T.1 <strong>(.pdf)</strong></a>
-                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT2.pdf" target="_blank">Portfolio<br>B.U.T.2 (S3) <strong>(.PDF)</strong></a>
+                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT1.pdf"
+                    target="_blank">Portfolio<br>B.U.T.1 <strong>(.pdf)</strong></a>
+                <a class="liens_travaux" href="http://qbuteau.fr/portfolio/QBUTEAU_BUT2.pdf"
+                    target="_blank">Portfolio<br>B.U.T.2 (S3) <strong>(.PDF)</strong></a>
             </div>
             <h4>Modules de Développement Front / Intégration</h4>
             <div class="travaux-mmi__modules">
                 <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r112" target="_blank">WR112</a>
                 <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r212" target="_blank">WR212</a>
                 <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r312" target="_blank">WR312</a>
+                <a class="liens_travaux" href="http://mmi22c03.mmi-troyes.fr/travaux/r312sass" target="_blank">WR312
+                    (SCSS)</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div id="copyright">&copy; 2023-2024 - Quentin BUTEAU</div>
-        <div id="liens-contact">
-            <a href="mailto:buteauquentin10@gmail.com" target="_blank" class="reseaux">
-                <i class="fa-solid fa-envelope"></i></a>
-            <a href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
-                <i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
-                <i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
-                <i class="fa-brands fa-github"></i></a>
-            <button onclick="copierTexte()" class="reseaux" id="discord">
-                <i class="fa-brands fa-discord"></i></button>
-            <a href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
-                <i class="fa-brands fa-behance"></i></a>
-        </div>
+        <ul id="liens-contact">
+            <li href="mailto:buteauquentin10@gmail.com" target="_blank" class="reseaux">
+                <i class="fa-solid fa-envelope"></i>
+            </li>
+            <li href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
+                <i class="fa-brands fa-instagram"></i>
+            </li>
+            <li href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
+                <i class="fa-brands fa-linkedin"></i>
+            </li>
+            <li href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
+                <i class="fa-brands fa-github"></i>
+            </li>
+            <li onclick="copierTexte()" class="reseaux" id="discord">
+                <i class="fa-brands fa-discord"></i>
+            </li>
+            <li href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
+                <i class="fa-brands fa-behance"></i>
+            </li>
+            </div>
     </footer>
 
     <!-- POP UP DE CTRL C CTRL V DU DISCORD -->
@@ -288,4 +326,5 @@
     <script src="assets/js/script.js"></script>
 
 </body>
+
 </html>

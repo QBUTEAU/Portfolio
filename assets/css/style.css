@@ -32,6 +32,27 @@ body {
   color: #fff;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 /* ----- HEADER ----- */
 #backToTop {
   cursor: pointer;
@@ -104,7 +125,9 @@ body {
   margin-left: 35px;
 }
 
-#navbar.scrolled .navbar__logo, #navbar.scrolled .navbar__liens a, #navbar.scrolled label i {
+#navbar.scrolled .navbar__logo,
+#navbar.scrolled .navbar__liens a,
+#navbar.scrolled label i {
   color: rgb(10, 14, 23) !important;
 }
 #navbar.scrolled .navbar__liens a::after {
@@ -145,12 +168,14 @@ body {
     width: 100%;
   }
 }
-label, #toggle {
+label,
+#toggle {
   display: none;
 }
 
 /* ----- PRESENTATION ----- */
-#presentation, #apropos {
+#presentation,
+#apropos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,7 +232,7 @@ label, #toggle {
   background-size: 200%;
   background-position: center;
   background-repeat: no-repeat;
-  border: 3px #E12319 solid;
+  border: 2px #E12319 solid;
   border-radius: 40px;
   height: 340px;
   width: 260px;
@@ -256,9 +281,16 @@ p {
   margin-top: 0;
 }
 
+.cv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
 #apropos a {
   cursor: pointer;
-  margin: 0 auto;
   text-align: center;
   width: max-content;
   border: 2px #E12319 solid;
@@ -290,7 +322,9 @@ p {
   text-align: center;
 }
 
-.divSkills1, .divSkills2, #divSkills {
+.divSkills1,
+.divSkills2,
+#divSkills {
   display: inline-block;
   margin: 0 auto;
   padding: 10px;
@@ -298,20 +332,24 @@ p {
   margin-bottom: 10px;
   margin-right: 4px;
   margin-left: 4px;
-  border: 3px solid #E12319;
+  border: 2px solid #E12319;
   border-radius: 25px;
   color: #fff;
   font-family: "Outfit";
   transition: 0.25s;
 }
-.divSkills1 i, .divSkills2 i, #divSkills i {
+.divSkills1 i,
+.divSkills2 i,
+#divSkills i {
   display: inline-flex;
   font-size: 30px;
   margin: 0 10px;
   transition: 0.25s;
 }
 
-.divSkills1 div, .divSkills2 div, #divSkills {
+.divSkills1 div,
+.divSkills2 div,
+#divSkills {
   margin: 5px 0;
   display: block;
 }
@@ -321,10 +359,11 @@ p {
   font-size: 14px;
 }
 
-.divSkills1:hover, .divSkills2:hover, #divSkills:hover {
+.divSkills1:hover,
+.divSkills2:hover,
+#divSkills:hover {
   background-color: rgba(255, 255, 255, 0.7764705882);
   color: #E12319;
-  cursor: crosshair;
 }
 
 .divSkills1:hover i {
@@ -337,7 +376,8 @@ p {
   width: 40%;
 }
 
-.divSkills1 .skillsTitle, .divSkills2 .skillsTitle {
+.divSkills1 .skillsTitle,
+.divSkills2 .skillsTitle {
   font-weight: 600;
   padding-bottom: 3px;
   font-family: "Montserrat";
@@ -353,7 +393,9 @@ p {
   padding-top: 20vh;
 }
 
-#developpement, #communication, #crea {
+#developpement,
+#communication,
+#crea {
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -442,8 +484,8 @@ p {
   background-image: url(../img/circuit-library.jpg);
 }
 
-.sae303 {
-  background-image: url(../img/sae303.jpg);
+.greenscore {
+  background-image: url(../img/greenscore.jpg);
 }
 
 .devLiens {
@@ -466,22 +508,8 @@ p {
 }
 
 /* -------------------- AUTRES REALISATIONS -------------------- */
-.komola {
-  background-image: url(../img/komola.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.toystory {
-  background-image: url(../img/toystory.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.chat {
-  background-image: url(../img/chat.jpg);
+.unity {
+  background-image: url(../img/unity.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -496,6 +524,13 @@ p {
 
 .styleselector {
   background-image: url(../img/styleselector.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sae303 {
+  background-image: url(../img/sae303.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -570,6 +605,13 @@ p {
   align-items: center;
   height: 45%;
   text-align: center;
+  border-radius: 0 0 18px 18px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+#autres-realisations .autresList .autresCard:hover .autresCard__legende {
+  background-color: rgba(255, 255, 255, 0.7764705882);
+  color: #E12319;
 }
 
 /* -------------------- TRAVAUX -------------------- */
@@ -583,16 +625,15 @@ p {
   display: flex;
   justify-content: center;
 }
-#travaux_mmi a {
+#travaux_mmi .liens_travaux {
   display: inline-block;
-  cursor: pointer;
   font-family: "Montserrat";
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   background-color: rgb(10, 14, 23);
   color: #fff;
-  border: #E12319 3px solid;
+  border: #E12319 2px solid;
   border-radius: 20px;
   padding: 8px 20px;
   margin: 4px 10px;
@@ -600,7 +641,7 @@ p {
   text-align: center;
   transition: 0.25s;
 }
-#travaux_mmi a:hover {
+#travaux_mmi .liens_travaux:hover {
   background-color: rgba(255, 255, 255, 0.7764705882);
   color: #E12319;
 }
@@ -668,6 +709,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 5px;
 }
 #liens-contact i {
   font-size: 20px;
@@ -684,11 +726,11 @@ footer {
   .devCard:nth-child(odd) .devLiens {
     border-radius: 27px 0 0 27px;
     grid-row: 1;
-    border-right: 3px #E12319 solid;
     border-left: 0;
   }
   .devCard:nth-child(odd) .devLegende {
     border-radius: 0 27px 27px 0;
+    border-left: 3px #E12319 solid;
   }
 }
 /* -------------------- MOBILE -------------------- */
@@ -718,21 +760,31 @@ footer {
   }
   label i {
     color: rgb(10, 14, 23) !important;
+    position: absolute;
+    bottom: -16px;
+    right: -10px;
+    font-size: 30px;
+  }
+  label .fa-x {
+    display: none;
   }
   #toggle:checked + .navbar__liens {
     justify-content: center;
-    background-color: rgb(10, 14, 23);
+    background-color: #fff;
     gap: 100px;
     top: 62.5px;
     flex-direction: column;
     position: absolute;
-    height: 500px;
+    height: calc(100vh - 62.5px);
     width: 100%;
     right: 0;
     border-bottom: 3px #E12319 solid;
   }
-  #navbar.scrolled .navbar__liens a {
-    color: #fff !important;
+  #toggle:checked + .navbar__liens a {
+    color: rgb(10, 14, 23) !important;
+  }
+  body.no-scroll {
+    overflow: hidden;
   }
   #presentation {
     padding-bottom: 30px;
@@ -770,10 +822,13 @@ footer {
   #contenu-competences {
     width: 90%;
   }
-  #apropos p, #competences p {
+  #apropos p,
+  #competences p {
     font-size: 15px;
   }
-  .divSkills1, .divSkills2, #divSkills {
+  .divSkills1,
+  .divSkills2,
+  #divSkills {
     display: block;
     max-width: max-content;
     margin: 0 auto;
@@ -789,7 +844,7 @@ footer {
   .devCard {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 60vh;
+    height: 70vh;
   }
   .devLegende {
     padding-left: 0;
@@ -845,7 +900,8 @@ footer {
   }
 }
 @media screen and (max-width: 1010px) {
-  #competences, #realisations {
+  #competences,
+  #realisations {
     width: 100%;
   }
 }

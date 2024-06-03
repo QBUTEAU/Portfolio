@@ -8,11 +8,11 @@ $rouge : #E12319;
 $blanc: #fff;
 $blancFonce: #ffffffc6;
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
@@ -24,24 +24,48 @@ body{
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: $blanc;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: $rouge;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: $rougeFonce1; 
+    background: $rougeFonce1;
 }
 
-::selection{
+::selection {
     background-color: $rouge;
     color: $blanc;
 }
 
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
 /* ----- HEADER ----- */
 
-#backToTop{
+#backToTop {
     cursor: pointer;
     display: inline-block;
     text-align: center;
@@ -57,16 +81,18 @@ body{
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.5s ease;
-    i{
+
+    i {
         font-size: 20px;
         transition: .2s;
     }
-    &:hover i{
+
+    &:hover i {
         transform: translate(0, -7px);
     }
 }
 
-#copy-popup{
+#copy-popup {
     color: white;
     font-weight: 700;
     font-style: oblique;
@@ -81,13 +107,14 @@ body{
     padding: 30px;
     display: none;
     transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    &.show{
+
+    &.show {
         bottom: 50%;
         opacity: 1;
     }
 }
 
-#navbar{
+#navbar {
     top: 0;
     position: fixed;
     height: 50px;
@@ -98,36 +125,43 @@ body{
     width: 100%;
     align-items: center;
     transition: background 0.2s ease, height 0.2s ease, color 0.2s ease;
-    &.scrolled{
+
+    &.scrolled {
         background: $blanc;
         border-bottom: #E12319 3px solid;
     }
 }
 
-.navbar__logo{
+.navbar__logo {
     font-size: 22px;
     font-weight: bold;
     text-decoration: none;
     color: $blanc;
     margin-left: 35px;
 }
-#navbar.scrolled{
-    .navbar__logo, .navbar__liens a, label i{
-        color: $noir!important;
+
+#navbar.scrolled {
+
+    .navbar__logo,
+    .navbar__liens a,
+    label i {
+        color: $noir !important;
     }
-    .navbar__liens a::after{
+
+    .navbar__liens a::after {
         background-color: $noir;
     }
 }
 
-.navbar__liens{
+.navbar__liens {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 35%;
     right: 35px;
     position: absolute;
-    a{
+
+    a {
         position: relative;
         text-decoration: none;
         text-transform: uppercase;
@@ -138,7 +172,7 @@ body{
     }
 }
 
-@media screen and (min-width:990px){
+@media screen and (min-width:990px) {
     a::after {
         content: "";
         position: absolute;
@@ -149,19 +183,22 @@ body{
         left: 50%;
         transform: translateX(-50%);
         transition: width 0.3s ease;
+
         &:hover::after {
             width: 100%;
         }
     }
 }
 
-label, #toggle{
+label,
+#toggle {
     display: none;
 }
 
 /* ----- PRESENTATION ----- */
 
-#presentation, #apropos{
+#presentation,
+#apropos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,23 +207,28 @@ label, #toggle{
     width: 100vw;
     height: 100vh;
 }
-#presentation{
+
+#presentation {
     flex-direction: column;
+
     .fa-arrow-down {
         animation: arrowAnimation 1s ease-in-out infinite;
     }
 }
-.presentation__nom-role{
+
+.presentation__nom-role {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: 30px;
-    h1{
+
+    h1 {
         margin: 0;
         color: $blanc;
         font-size: 60px;
     }
-    h6{
+
+    h6 {
         margin: 0;
         color: $blanc;
         font-family: 'Outfit';
@@ -195,20 +237,21 @@ label, #toggle{
     }
 }
 
-.presentation__reseaux{
+.presentation__reseaux {
     margin-top: 40px;
     display: flex;
     gap: 50px;
     align-items: center;
     justify-content: center;
-    i{
+
+    i {
         font-size: 40px;
         color: $blanc;
     }
 }
 
 
-.hidden i{
+.hidden i {
     color: $rouge;
 }
 
@@ -221,17 +264,18 @@ label, #toggle{
 //     }
 // }
 
-.apropos__photo{
+.apropos__photo {
     background-image: url(../img/qbuteau-presentation.webp);
     background-size: 200%;
     background-position: center;
     background-repeat: no-repeat;
-    border: 3px $rouge solid;
+    border: 2px $rouge solid;
     border-radius: 40px;
     height: 340px;
     width: 260px;
     transition: 0.25s;
-    &:hover{
+
+    &:hover {
         background-size: 220%;
         cursor: crosshair;
     }
@@ -240,11 +284,12 @@ label, #toggle{
 /* ----- SECTION ----- */
 
 
-hr{
+hr {
     max-width: 80vw;
     margin-bottom: 30px;
 }
-h2{
+
+h2 {
     text-align: center;
     color: $blanc;
     text-transform: uppercase;
@@ -254,11 +299,13 @@ h2{
     text-decoration: underline;
     text-underline-offset: 10px;
 }
-h4{
+
+h4 {
     font-size: 16px;
     margin: 0;
 }
-p{
+
+p {
     color: $blanc;
     font-size: 15px;
     font-family: 'Outfit';
@@ -266,17 +313,26 @@ p{
     text-align: justify;
 }
 
-.apropos__contenu{
+.apropos__contenu {
     width: 50%;
     padding-right: 70px;
-    h2{
+
+    h2 {
         margin-top: 0;
     }
 }
 
-#apropos a{
+.cv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+#apropos a {
     cursor: pointer;
-    margin: 0 auto;
     text-align: center;
     width: max-content;
     border: 2px $rouge solid;
@@ -289,14 +345,15 @@ p{
     transition: 0.25s;
     text-decoration: none;
     display: block;
-    &:hover{
+
+    &:hover {
         background-color: $blancFonce;
         color: $rouge;
     }
 }
 
 
-#competences{
+#competences {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,10 +361,14 @@ p{
     height: 100vh;
     width: 100vw;
 }
-.competences__contenu{
+
+.competences__contenu {
     text-align: center;
 }
-.divSkills1, .divSkills2, #divSkills{
+
+.divSkills1,
+.divSkills2,
+#divSkills {
     display: inline-block;
     margin: 0 auto;
     padding: 10px;
@@ -315,55 +376,70 @@ p{
     margin-bottom: 10px;
     margin-right: 4px;
     margin-left: 4px;
-    border: 3px solid $rouge;
+    border: 2px solid $rouge;
     border-radius: 25px;
     color: $blanc;
     font-family: 'Outfit';
     transition: 0.25s;
-    i{
+
+    i {
         display: inline-flex;
         font-size: 30px;
         margin: 0 10px;
         transition: 0.25s;
     }
 }
-.divSkills1 div, .divSkills2 div, #divSkills{
+
+.divSkills1 div,
+.divSkills2 div,
+#divSkills {
     margin: 5px 0;
     display: block;
 }
-.divSkills2 div{
+
+.divSkills2 div {
     padding: 0 10px;
     font-size: 14px;
 }
-.divSkills1:hover, .divSkills2:hover, #divSkills:hover{
+
+.divSkills1:hover,
+.divSkills2:hover,
+#divSkills:hover {
     background-color: $blancFonce;
     color: $rouge;
-    cursor: crosshair;
 }
-.divSkills1:hover i{
-    color: $rouge!important;
+
+.divSkills1:hover i {
+    color: $rouge !important;
 }
-#divSkills{
+
+#divSkills {
     margin: 0 auto;
     margin-top: 10px;
     width: 40%;
 }
-.divSkills1 .skillsTitle, .divSkills2 .skillsTitle{
+
+.divSkills1 .skillsTitle,
+.divSkills2 .skillsTitle {
     font-weight: 600;
     padding-bottom: 3px;
     font-family: 'Montserrat';
 }
-.legendesSkills i{
+
+.legendesSkills i {
     margin-right: 5px;
 }
 
 /* -------------------- PROJETS -------------------- */
 
-#realisations{
+#realisations {
     margin: 0 auto;
     padding-top: 20vh;
 }
-#developpement, #communication, #crea{
+
+#developpement,
+#communication,
+#crea {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -374,7 +450,7 @@ p{
     margin-bottom: 100px;
 }
 
-.devCard{
+.devCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -387,12 +463,13 @@ p{
     border-radius: 30px;
     margin-bottom: 60px;
     transition: 0.25s;
-    &:hover{
+
+    &:hover {
         transform: scale(1.05);
     }
 }
 
-.devLegende{
+.devLegende {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -402,60 +479,66 @@ p{
     background-color: $noirFonce;
     border-radius: 27px 0 0 27px;
 
-    .devTechno{
+    .devTechno {
         display: flex;
         gap: 15px;
-        i{
+
+        i {
             font-size: 25px;
             color: $blanc;
         }
     }
 
-    h3{
+    h3 {
         position: relative;
         color: $blanc;
         margin: 0;
         font-size: 40px;
         font-family: 'Montserrat';
     }
-    h5{
+
+    h5 {
         color: $blancFonce;
         margin: 0;
         font-size: 15px;
         font-family: 'Outfit';
     }
-    h6{
+
+    h6 {
         color: $blancFonce;
         margin: 0;
         font-size: 12px;
         font-family: 'Montserrat';
-        a{
+
+        a {
             color: $blancFonce;
             font-weight: 700;
         }
     }
-    p{
+
+    p {
         margin: 0;
     }
 }
 
-.membres{
+.membres {
     font-size: 13px;
-    a{
+
+    a {
         color: $blanc;
     }
 }
 
 
-$list_projet: mingle, circuit-library, sae303;
+$list_projet: mingle, circuit-library, greenscore;
 
-@each $projet in $list_projet{
-    .#{$projet}{
+@each $projet in $list_projet {
+    .#{$projet} {
         background-image: url(../img/#{$projet}.jpg);
     }
 }
 
-.devLiens{
+.devLiens {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,12 +547,14 @@ $list_projet: mingle, circuit-library, sae303;
     background-repeat: no-repeat;
     border-radius: 0 27px 27px 0;
     border-left: 3px $rouge solid;
-    i{
-        font-size: 40px!important;
+
+    i {
+        font-size: 40px !important;
         color: $blanc;
         transition: 0.25s;
-        &:hover{
-            color: $rouge!important;
+
+        &:hover {
+            color: $rouge !important;
         }
     }
 }
@@ -477,18 +562,18 @@ $list_projet: mingle, circuit-library, sae303;
 
 /* -------------------- AUTRES REALISATIONS -------------------- */
 
-$list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
+$list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
 
-@each $autres in $list-autres{
-    .#{$autres}{
+@each $autres in $list-autres {
+    .#{$autres} {
         background-image: url(../img/#{$autres}.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
-} 
+}
 
-#autres-realisations{
+#autres-realisations {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -497,13 +582,13 @@ $list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
     min-height: 100vh;
     width: 80%;
 
-    .autresList{
+    .autresList {
         display: flex;
         gap: 40px;
         justify-content: center;
         flex-wrap: wrap;
 
-        .autresCard{
+        .autresCard {
             display: flex;
             flex-direction: column;
             height: 175px;
@@ -512,46 +597,59 @@ $list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
             color: white;
             border-radius: 20px;
 
-            h6{
+            h6 {
                 margin: 0;
                 font-style: italic;
                 font-weight: 500;
-                a{
+
+                a {
                     color: $blanc;
                 }
             }
 
-            .autresCard__img{
+            .autresCard__img {
                 height: 55%;
                 border-radius: 18px 18px 0 0;
                 border-bottom: 2px $rouge solid;
-                > div{
+
+                >div {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     gap: 30px;
-                    height: 100%; 
+                    height: 100%;
                     width: 100%;
                     border-radius: 17px 17px 0 0;
                     background-color: rgba(0, 0, 0, 0.712);
-                    i{
+
+                    i {
                         font-size: 26px;
                         color: $blanc;
                         transition: 0.25s;
-                        &:hover{
+
+                        &:hover {
                             color: $rouge;
                         }
                     }
                 }
             }
 
-            .autresCard__legende{
+            .autresCard__legende {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 height: 45%;
                 text-align: center;
+                border-radius: 0 0 18px 18px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+
+            &:hover .autresCard__legende {
+                background-color: $blancFonce;
+                color: $rouge;
+
             }
         }
     }
@@ -561,37 +659,41 @@ $list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
 
 /* -------------------- TRAVAUX -------------------- */
 
-#travaux_mmi{
+#travaux_mmi {
     margin: 0 auto;
     width: 90%;
     text-align: center;
     margin-top: 30vh;
-    & > div{
+
+    &>div {
         display: flex;
         justify-content: center;
     }
-    a{
+
+    .liens_travaux {
         display: inline-block;
-        cursor: pointer;
+        // cursor: pointer;
         font-family: "Montserrat";
         font-size: 15px;
         font-weight: 600;
         text-transform: uppercase;
         background-color: $noir;
         color: $blanc;
-        border: $rouge 3px solid;
+        border: $rouge 2px solid;
         border-radius: 20px;
         padding: 8px 20px;
         margin: 4px 10px;
         text-decoration: none;
         text-align: center;
         transition: 0.25s;
-        &:hover{
+
+        &:hover {
             background-color: $blancFonce;
             color: $rouge;
         }
     }
-    h4{
+
+    h4 {
         margin: 30px 0 8px 0;
         line-height: 150%;
         text-transform: uppercase;
@@ -603,7 +705,7 @@ $list-autres: komola, toystory, chat, webdoc, styleselector, formula-pedia;
 
 /* -------------------- FOOTER -------------------- */
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -617,7 +719,7 @@ footer{
     padding: 10px 0;
 }
 
-.reseaux{
+.reseaux {
     cursor: pointer;
     margin: 0 10px;
     display: flex;
@@ -633,34 +735,43 @@ footer{
     white-space: nowrap;
     width: min-content;
     transition: 0.25s;
-    i{
+
+    i {
         color: $noir;
     }
-    &:hover{
+
+    &:hover {
         background-color: $rouge;
         color: $blanc;
     }
-    &:hover i{
-        color: $blanc!important;
+
+    &:hover i {
+        color: $blanc !important;
     }
 }
-#discord{
+
+#discord {
     background-color: $blanc;
     font-family: 'Montserrat';
-    &:hover{
+
+    &:hover {
         background-color: $rouge;
     }
 }
-#liens-contact{
+
+#liens-contact {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    i{
+    margin: 5px;
+
+    i {
         font-size: 20px;
         transition: 0.25s;
     }
 }
-#copyright{
+
+#copyright {
     font-weight: 700;
     font-size: 15px;
 }
@@ -668,41 +779,42 @@ footer{
 
 /* -------------------- NTH CHILD -------------------- */
 
-@media screen and (min-width:990px){
-    .devCard:nth-child(odd) .devLiens{
+@media screen and (min-width:990px) {
+    .devCard:nth-child(odd) .devLiens {
         border-radius: 27px 0 0 27px;
         grid-row: 1;
-        border-right: 3px $rouge solid;
         border-left: 0;
     }
-    .devCard:nth-child(odd) .devLegende{
+
+    .devCard:nth-child(odd) .devLegende {
         border-radius: 0 27px 27px 0;
+        border-left: 3px $rouge solid;
     }
 }
 
 
 /* -------------------- MOBILE -------------------- */
 
-@media screen and (max-width:1300px){
-    .navbar__liens{
+@media screen and (max-width:1300px) {
+    .navbar__liens {
         width: 50%;
     }
 }
 
 
-@media screen and (max-width:990px){
+@media screen and (max-width:990px) {
 
-    #navbar{
+    #navbar {
         height: 60px;
         background-color: $blanc;
         border-bottom: 3px $rouge solid;
     }
 
-    .navbar__liens{
+    .navbar__liens {
         display: none;
     }
 
-    .navbar__logo{
+    .navbar__logo {
         color: $noir;
     }
 
@@ -712,49 +824,70 @@ footer{
         right: 35px;
         font-size: 26px;
         cursor: pointer;
-        i{
-            color: $noir!important;
+
+        i {
+            color: $noir !important;
+            position: absolute;
+            bottom: -16px;
+            right: -10px;
+            font-size: 30px;
+        }
+
+        .fa-x {
+            display: none;
         }
     }
-    #toggle:checked + .navbar__liens{
+
+    #toggle:checked+.navbar__liens {
         justify-content: center;
-        background-color: $noir;
+        background-color: $blanc;
         gap: 100px;
         top: 62.5px;
         flex-direction: column;
         position: absolute;
-        height: 500px;
+        height: calc(100vh - 62.5px);
         width: 100%;
         right: 0;
         border-bottom: 3px $rouge solid;
-    }
-    #navbar.scrolled .navbar__liens a{
-        color: $blanc!important;
-    }
-    
 
-    #presentation{
+        a {
+            color: $noir !important;
+        }
+
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+
+    #presentation {
         padding-bottom: 30px;
         min-height: 100vh;
     }
-    h2{
+
+    h2 {
         font-size: 35px;
     }
-    #realisations h2{
+
+    #realisations h2 {
         width: 80%;
         margin: 0 auto;
         margin-bottom: 30px;
     }
-    #photo{
+
+    #photo {
         grid-row: 1;
         height: 306px;
         width: 234px;
     }
-    .contenu{
+
+    .contenu {
         padding-right: 0;
         width: 75%;
     }
-    #apropos{
+
+    #apropos {
         display: grid;
         justify-items: center;
         grid-template-columns: 1fr;
@@ -762,98 +895,118 @@ footer{
         gap: 45px;
         margin-bottom: 20vh;
     }
-    .apropos__contenu{
+
+    .apropos__contenu {
         width: 70%;
         padding-right: 0;
     }
-    #contenu-competences{
+
+    #contenu-competences {
         width: 90%;
     }
-    #apropos p, #competences p{
+
+    #apropos p,
+    #competences p {
         font-size: 15px;
     }
-    .divSkills1, .divSkills2, #divSkills{
+
+    .divSkills1,
+    .divSkills2,
+    #divSkills {
         display: block;
         max-width: max-content;
         margin: 0 auto;
         margin-bottom: 10px;
     }
-    .divSkills1 div{
+
+    .divSkills1 div {
         margin-bottom: 0;
     }
-    .divSkills1 i{
+
+    .divSkills1 i {
         // margin-bottom: 10px;
         padding-bottom: 0;
         margin: 0 7px 10px 7px;
     }
 
-    .devCard{
+    .devCard {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        height: 60vh;
+        height: 70vh;
     }
-    .devLegende{
+
+    .devLegende {
         padding-left: 0;
         text-align: center;
         padding: 15px;
         border-radius: 27px 27px 0 0;
-        .devTechno{
+
+        .devTechno {
             justify-content: center;
         }
-        h3{
+
+        h3 {
             font-size: 32px;
         }
-        h5{
+
+        h5 {
             font-size: 14px;
         }
-        p{
+
+        p {
             font-size: 12px;
         }
-        & > .membres{
+
+        &>.membres {
             text-align: center;
             font-size: 10px;
         }
     }
-    .devLiens{
+
+    .devLiens {
         border-radius: 0 0 27px 27px;
         border-left: 0;
         border-top: 3px $rouge solid;
-        i{
-            font-size: 30px!important;
+
+        i {
+            font-size: 30px !important;
         }
     }
 
-    #travaux_mmi > div{
+    #travaux_mmi>div {
         flex-wrap: wrap;
     }
-    #travaux_mmi a{
+
+    #travaux_mmi a {
         width: max-content;
         margin-top: 10px;
     }
 
-    footer{
+    footer {
         flex-direction: column;
         padding: 30px 0;
         gap: 10px;
     }
 
-    #liens-contact{
+    #liens-contact {
         width: 63%;
         gap: 5px;
     }
 
-    .reseaux{
+    .reseaux {
         margin: 5px;
     }
-    #copy-popup{
+
+    #copy-popup {
         padding: 10px;
     }
 }
 
-@media screen and (max-width:1010px){
+@media screen and (max-width:1010px) {
 
-    #competences, #realisations{
+    #competences,
+    #realisations {
         width: 100%;
     }
-    
+
 }
