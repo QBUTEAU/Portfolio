@@ -385,7 +385,7 @@ p {
     i {
         display: inline-flex;
         font-size: 30px;
-        margin: 0 10px;
+        margin: 0 6px;
         transition: 0.25s;
     }
 }
@@ -518,6 +518,7 @@ p {
 
     p {
         margin: 0;
+        font-size: 14px;
     }
 }
 
@@ -643,7 +644,6 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
                 text-align: center;
                 border-radius: 0 0 18px 18px;
                 transition: 0.25s;
-                cursor: pointer;
             }
 
             &:hover .autresCard__legende {
@@ -764,6 +764,7 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     margin: 5px;
+    list-style: none;
 
     i {
         font-size: 20px;
@@ -806,6 +807,7 @@ footer {
 
     #navbar {
         height: 60px;
+        width: 100vw;
         background-color: $blanc;
         border-bottom: 3px $rouge solid;
     }
@@ -833,27 +835,33 @@ footer {
             font-size: 30px;
         }
 
-        .fa-x {
-            display: none;
+        .fa-xmark {
+            font-size: 38px;
+            bottom: -20px;
+            right: -11px;
         }
     }
 
-    #toggle:checked+.navbar__liens {
-        justify-content: center;
-        background-color: $blanc;
-        gap: 100px;
-        top: 62.5px;
-        flex-direction: column;
-        position: absolute;
-        height: calc(100vh - 62.5px);
-        width: 100%;
-        right: 0;
-        border-bottom: 3px $rouge solid;
+    #toggle:checked {
+        right: 100px !important;
 
-        a {
-            color: $noir !important;
+        +.navbar__liens {
+            justify-content: center;
+            background-color: $blanc;
+            gap: 100px;
+            top: 62.5px;
+            flex-direction: column;
+            position: absolute;
+            height: calc(100vh - 62.5px);
+            width: 100%;
+            right: 0;
+            border-bottom: 3px $rouge solid;
+
+            a {
+                color: $noir !important;
+            }
+
         }
-
     }
 
     body.no-scroll {
@@ -931,8 +939,8 @@ footer {
 
     .devCard {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        height: 70vh;
+        grid-template-rows: 2fr 1fr;
+        min-height: 75vh;
     }
 
     .devLegende {
@@ -946,15 +954,22 @@ footer {
         }
 
         h3 {
-            font-size: 32px;
+            font-size: 35px;
         }
 
         h5 {
-            font-size: 14px;
+            font-size: 16px;
+        }
+
+        h6 {
+            font-size: 11px;
         }
 
         p {
-            font-size: 12px;
+            font-size: 15px;
+            line-height: 22px;
+            width: 90%;
+            margin: 0 auto;
         }
 
         &>.membres {
@@ -968,8 +983,8 @@ footer {
         border-left: 0;
         border-top: 3px $rouge solid;
 
-        i {
-            font-size: 30px !important;
+        a {
+            margin: 0 50px !important;
         }
     }
 
@@ -989,8 +1004,9 @@ footer {
     }
 
     #liens-contact {
-        width: 63%;
+        width: 65%;
         gap: 5px;
+        padding: 0;
     }
 
     .reseaux {

@@ -122,12 +122,27 @@ sr.reveal(`.autresCard`, { interval: '100' });
 
 /* ----- FONCTION POUR ENLEVER LE SCROLL PENDANT APPARITION MENU BURGER ----- */
 
-document.getElementById('toggle').addEventListener('change', function () {
-  if (this.checked) {
-    document.body.classList.add('no-scroll');
-  } else {
-    document.body.classList.remove('no-scroll');
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.getElementById('toggle');
+  var icon = document.getElementById('icon');
+
+  // Vérifiez si l'élément icône est bien chargé et visible
+  console.log('Initial icon class:', icon.className);
+
+  toggle.addEventListener('change', function () {
+    console.log('Checkbox state changed, checked:', this.checked);
+    if (this.checked) {
+      document.body.classList.add('no-scroll');
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+      console.log('Icon changed to :' + icon.className);
+    } else {
+      document.body.classList.remove('no-scroll');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+      console.log('Icon changed to :' + icon.className);
+    }
+  });
 });
 
 

@@ -343,7 +343,7 @@ p {
 #divSkills i {
   display: inline-flex;
   font-size: 30px;
-  margin: 0 10px;
+  margin: 0 6px;
   transition: 0.25s;
 }
 
@@ -467,6 +467,7 @@ p {
 }
 .devLegende p {
   margin: 0;
+  font-size: 14px;
 }
 
 .membres {
@@ -607,7 +608,6 @@ p {
   text-align: center;
   border-radius: 0 0 18px 18px;
   transition: 0.25s;
-  cursor: pointer;
 }
 #autres-realisations .autresList .autresCard:hover .autresCard__legende {
   background-color: rgba(255, 255, 255, 0.7764705882);
@@ -710,6 +710,7 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   margin: 5px;
+  list-style: none;
 }
 #liens-contact i {
   font-size: 20px;
@@ -742,6 +743,7 @@ footer {
 @media screen and (max-width: 990px) {
   #navbar {
     height: 60px;
+    width: 100vw;
     background-color: #fff;
     border-bottom: 3px #E12319 solid;
   }
@@ -765,8 +767,13 @@ footer {
     right: -10px;
     font-size: 30px;
   }
-  label .fa-x {
-    display: none;
+  label .fa-xmark {
+    font-size: 38px;
+    bottom: -20px;
+    right: -11px;
+  }
+  #toggle:checked {
+    right: 100px !important;
   }
   #toggle:checked + .navbar__liens {
     justify-content: center;
@@ -843,8 +850,8 @@ footer {
   }
   .devCard {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 70vh;
+    grid-template-rows: 2fr 1fr;
+    min-height: 75vh;
   }
   .devLegende {
     padding-left: 0;
@@ -856,13 +863,19 @@ footer {
     justify-content: center;
   }
   .devLegende h3 {
-    font-size: 32px;
+    font-size: 35px;
   }
   .devLegende h5 {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .devLegende h6 {
+    font-size: 11px;
   }
   .devLegende p {
-    font-size: 12px;
+    font-size: 15px;
+    line-height: 22px;
+    width: 90%;
+    margin: 0 auto;
   }
   .devLegende > .membres {
     text-align: center;
@@ -873,8 +886,8 @@ footer {
     border-left: 0;
     border-top: 3px #E12319 solid;
   }
-  .devLiens i {
-    font-size: 30px !important;
+  .devLiens a {
+    margin: 0 50px !important;
   }
   #travaux_mmi > div {
     flex-wrap: wrap;
@@ -889,8 +902,9 @@ footer {
     gap: 10px;
   }
   #liens-contact {
-    width: 63%;
+    width: 65%;
     gap: 5px;
+    padding: 0;
   }
   .reseaux {
     margin: 5px;

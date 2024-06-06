@@ -27,7 +27,7 @@
 
     <header id="navbar">
         <a class="navbar__logo" href="#presentation">QBUTEAU</a>
-        <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+        <label for="toggle"><i id="icon" class="fa-solid fa-bars"></i></label>
         <input type="checkbox" id="toggle">
         <navbar class="navbar__liens">
             <a href="#apropos">à propos de moi</a>
@@ -96,7 +96,7 @@
                             <i class="fa-solid fa-database" style="color: #2685e4;"></i>
                             <i class="fa-brands fa-docker" style="color: #0db7ed;"></i>
                             <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
-                            <i class="fa-brands fa-symfony" style="color: #FFF"></i>
+                            <i class="fa-brands fa-symfony" style="color: #a0a0a0"></i>
                             <i class="fa-brands fa-wordpress" style="color: #00749C;"></i>
                         </div>
                     </div>
@@ -144,10 +144,10 @@
                     </h6>
                 </div>
                 <div class="devLiens greenscore">
-                    <a href="https://mmi22c03.sae401.ovh" target="_blank"><i
-                            class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
-                    <a href="https://github.com/QBUTEAU/GreenScore_SAE401" target="_blank"><i
-                            class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                    <a href="https://mmi22c03.sae401.ovh" target="_blank" style="margin-right: 35px;"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/QBUTEAU/GreenScore_SAE401" target="_blank" style="margin-left: 35px;"><i
+                            class="fa-brands fa-github"></i></a>
                 </div>
             </div>
 
@@ -187,10 +187,10 @@
                         au concept "mobile first".</p>
                 </div>
                 <div class="devLiens circuit-library">
-                    <a href="https://mmi22c03.sae203.ovh" target="_blank"><i
-                            class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 35px;"></i></a>
-                    <a href="https://github.com/QBUTEAU/CircuitLibrary_SAE203" target="_blank"><i
-                            class="fa-brands fa-github" style="margin-left: 35px;"></i></a>
+                    <a href="https://mmi22c03.sae203.ovh" target="_blank" style="margin-right: 35px;"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/QBUTEAU/CircuitLibrary_SAE203" target="_blank"
+                        style="margin-left: 35px;"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -296,25 +296,37 @@
     <footer>
         <div id="copyright">&copy; 2023-2024 - Quentin BUTEAU</div>
         <ul id="liens-contact">
-            <li href="mailto:buteauquentin10@gmail.com" target="_blank" class="reseaux">
-                <i class="fa-solid fa-envelope"></i>
+            <li>
+                <a href="mailto:buteauquentin10@gmail.com" target="_blank" class="reseaux">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </li>
-            <li href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
-                <i class="fa-brands fa-instagram"></i>
+            <li>
+                <a href="https://instagram.com/quentin.bto" target="_blank" class="reseaux">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </li>
-            <li href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
-                <i class="fa-brands fa-linkedin"></i>
+            <li>
+                <a href="https://www.linkedin.com/in/quentin-buteau/" target="_blank" class="reseaux">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
             </li>
-            <li href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
-                <i class="fa-brands fa-github"></i>
+            <li>
+                <a href="https://github.com/QBUTEAU" target="_blank" class="reseaux">
+                    <i class="fa-brands fa-github"></i>
+                </a>
             </li>
-            <li onclick="copierTexte()" class="reseaux" id="discord">
-                <i class="fa-brands fa-discord"></i>
+            <li>
+                <a onclick="copierTexte()" class="reseaux" id="discord">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
             </li>
-            <li href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
-                <i class="fa-brands fa-behance"></i>
+            <li>
+                <a href="https://www.behance.net/quentinbuteau" target="_blank" class="reseaux">
+                    <i class="fa-brands fa-behance"></i>
+                </a>
             </li>
-            </div>
+        </ul>
     </footer>
 
     <!-- POP UP DE CTRL C CTRL V DU DISCORD -->
