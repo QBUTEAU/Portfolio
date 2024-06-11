@@ -93,7 +93,7 @@ html.lenis body {
 }
 
 #copy-popup {
-    color: white;
+    color: $blanc;
     font-weight: 700;
     font-style: oblique;
     text-align: center;
@@ -106,10 +106,11 @@ html.lenis body {
     border-radius: 20px;
     padding: 30px;
     display: none;
-    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 
     &.show {
-        bottom: 50%;
+        display: block;
         opacity: 1;
     }
 }
@@ -128,7 +129,7 @@ html.lenis body {
 
     &.scrolled {
         background: $blanc;
-        border-bottom: #E12319 3px solid;
+        border-bottom: $rouge 3px solid;
     }
 }
 
@@ -247,6 +248,11 @@ label,
     i {
         font-size: 40px;
         color: $blanc;
+        transition: 0.25s;
+
+        &:hover {
+            color: $rouge;
+        }
     }
 }
 
@@ -347,87 +353,65 @@ p {
     display: block;
 
     &:hover {
-        background-color: $blancFonce;
+        background-color: $blanc;
         color: $rouge;
     }
 }
 
+/* -------------------- COMPETENCES -------------------- */
 
 #competences {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 100vh;
-    width: 100vw;
-}
+    min-height: 100vh;
 
-.competences__contenu {
-    text-align: center;
-}
+    .competences__liste {
+        margin: 0 auto;
+        width: 85vw;
 
-.divSkills1,
-.divSkills2,
-#divSkills {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 4px;
-    margin-left: 4px;
-    border: 2px solid $rouge;
-    border-radius: 25px;
-    color: $blanc;
-    font-family: 'Outfit';
-    transition: 0.25s;
+        p {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Montserrat';
+            margin: 30px 0 0px 0;
+        }
 
-    i {
-        display: inline-flex;
-        font-size: 30px;
-        margin: 0 6px;
-        transition: 0.25s;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 8px 0;
+            padding: 0;
+
+            li {
+                color: $blanc;
+                width: max-content;
+                list-style: none;
+                font-family: "Outfit";
+                font-size: 15px;
+                font-weight: 500;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 0;
+                border-radius: 20px;
+                border: 2px $rouge solid;
+                padding: 8px 18px;
+                transition: 0.25s;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $blanc;
+                    color: $rouge;
+                }
+
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
     }
-}
-
-.divSkills1 div,
-.divSkills2 div,
-#divSkills {
-    margin: 5px 0;
-    display: block;
-}
-
-.divSkills2 div {
-    padding: 0 10px;
-    font-size: 14px;
-}
-
-.divSkills1:hover,
-.divSkills2:hover,
-#divSkills:hover {
-    background-color: $blancFonce;
-    color: $rouge;
-}
-
-.divSkills1:hover i {
-    color: $rouge !important;
-}
-
-#divSkills {
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 40%;
-}
-
-.divSkills1 .skillsTitle,
-.divSkills2 .skillsTitle {
-    font-weight: 600;
-    padding-bottom: 3px;
-    font-family: 'Montserrat';
-}
-
-.legendesSkills i {
-    margin-right: 5px;
 }
 
 /* -------------------- PROJETS -------------------- */
@@ -435,19 +419,6 @@ p {
 #realisations {
     margin: 0 auto;
     padding-top: 20vh;
-}
-
-#developpement,
-#communication,
-#crea {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    width: 95%;
-    margin-bottom: 100px;
 }
 
 .devCard {
@@ -498,20 +469,20 @@ p {
     }
 
     h5 {
-        color: $blancFonce;
+        color: $blanc;
         margin: 0;
         font-size: 15px;
         font-family: 'Outfit';
     }
 
     h6 {
-        color: $blancFonce;
+        color: $blanc;
         margin: 0;
         font-size: 12px;
         font-family: 'Montserrat';
 
         a {
-            color: $blancFonce;
+            color: $blanc;
             font-weight: 700;
         }
     }
@@ -580,8 +551,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    min-height: 100vh;
-    width: 80%;
+    width: 80vw;
 
     .autresList {
         display: flex;
@@ -647,7 +617,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
             }
 
             &:hover .autresCard__legende {
-                background-color: $blancFonce;
+                background-color: $blanc;
                 color: $rouge;
 
             }
@@ -663,7 +633,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
     margin: 0 auto;
     width: 90%;
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 20vh;
 
     &>div {
         display: flex;
@@ -688,12 +658,15 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
         transition: 0.25s;
 
         &:hover {
-            background-color: $blancFonce;
+            background-color: $blanc;
             color: $rouge;
         }
     }
 
-    h4 {
+    p {
+        text-align: center;
+        font-weight: 700;
+        font-family: "Montserrat";
         margin: 30px 0 8px 0;
         line-height: 150%;
         text-transform: uppercase;
@@ -709,7 +682,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 30vh;
+    margin-top: 20vh;
     color: $noir;
     font-family: 'Montserrat';
     font-weight: 400;
@@ -909,32 +882,8 @@ footer {
         padding-right: 0;
     }
 
-    #contenu-competences {
-        width: 90%;
-    }
-
-    #apropos p,
-    #competences p {
+    #apropos p {
         font-size: 15px;
-    }
-
-    .divSkills1,
-    .divSkills2,
-    #divSkills {
-        display: block;
-        max-width: max-content;
-        margin: 0 auto;
-        margin-bottom: 10px;
-    }
-
-    .divSkills1 div {
-        margin-bottom: 0;
-    }
-
-    .divSkills1 i {
-        // margin-bottom: 10px;
-        padding-bottom: 0;
-        margin: 0 7px 10px 7px;
     }
 
     .devCard {
@@ -1020,7 +969,6 @@ footer {
 
 @media screen and (max-width:1010px) {
 
-    #competences,
     #realisations {
         width: 100%;
     }

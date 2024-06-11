@@ -24,15 +24,28 @@ function copierTexte() {
 }
 
 
+
+/* ----- FONCTION POUR ENLEVER LE MENU BURGER LORSQU'ON CLIQUE
+SUR UN DES LIENS, ET RECHANGE LE F-XMARK en F-BARS ----- */
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Sélectionnez le bouton toggle
+  // Sélectionnez les éléments nécessaires
   var toggleButton = document.getElementById('toggle');
-
+  var toggleIcon = document.getElementById('icon');
+  var navbarLinks = document.querySelector('.navbar__liens');
+  var navLinks = navbarLinks.querySelectorAll('a');
+  // Fonction pour mettre à jour l'icône
+  function updateToggleIcon() {
+    if (toggleButton.checked) {
+      toggleIcon.classList.remove('fa-bars');
+      toggleIcon.classList.add('fa-xmark');
+    } else {
+      toggleIcon.classList.remove('fa-xmark');
+      toggleIcon.classList.add('fa-bars');
+    }
+  }
   // Ajoutez un gestionnaire d'événements de clic au bouton toggle
-  toggleButton.addEventListener('click', function () {
-    // Sélectionnez la barre de navigation
-    var navbarLinks = document.querySelector('.navbar__liens');
-
+  toggleButton.addEventListener('change', function () {
     // Vérifiez si le toggle est coché
     if (toggleButton.checked) {
       // Si le toggle est coché, affichez la barre de navigation en flex
@@ -41,10 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
       // Sinon, masquez la barre de navigation
       navbarLinks.style.display = 'none';
     }
+    updateToggleIcon();
   });
+  // Ajoutez des gestionnaires d'événements de clic aux liens de navigation
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      // Masquez la barre de navigation
+      navbarLinks.style.display = 'none';
+      // Décochez le toggle
+      toggleButton.checked = false;
+      // Mettez à jour l'icône
+      updateToggleIcon();
+    });
+  });
+  // Initialisez l'icône au chargement de la page
+  updateToggleIcon();
 });
 
-// Sélectionnez tous les liens de la barre de navigation
+
+
+/* ----- FONCTION POUR LE MENU BURGER ----- */
+
 var navLinks = document.querySelectorAll('.navbar__liens a');
 
 // Ajoutez un gestionnaire d'événements de clic à chaque lien
@@ -60,7 +90,6 @@ navLinks.forEach(function (link) {
     }
   });
 });
-
 
 
 
@@ -102,6 +131,7 @@ window.addEventListener('scroll', function () {
 });
 
 
+
 /* ----- FONCTION POUR L'ANIMATION LORS DU REVEAL ----- */
 
 const sr = ScrollReveal({
@@ -114,10 +144,11 @@ const sr = ScrollReveal({
 
 sr.reveal(`.apropos__contenu`, { origin: 'left' });
 sr.reveal(`.apropos__photo`, { origin: 'right' });
-sr.reveal(`.divSkills1 , .divSkills2`, { interval: '100' });
+sr.reveal(`.competences__liste`, { interval: '100' });
 sr.reveal(`.devCard`, { interval: '100' });
 sr.reveal(`.liens_travaux`, { origin: 'bottom', interval: '100' });
 sr.reveal(`.autresCard`, { interval: '100' });
+
 
 
 /* ----- FONCTION POUR ENLEVER LE SCROLL PENDANT APPARITION MENU BURGER ----- */
@@ -144,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
 
 
 /* ----- FONCTION POUR LE SCROLL SMOOTH ----- */
