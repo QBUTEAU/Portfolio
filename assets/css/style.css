@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body {
@@ -27,11 +28,6 @@ body {
   background: rgb(136, 0, 0);
 }
 
-::selection {
-  background-color: #E12319;
-  color: #fff;
-}
-
 html.lenis,
 html.lenis body {
   height: auto;
@@ -51,6 +47,12 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* ----- HEADER ----- */
@@ -127,30 +129,33 @@ html.lenis body {
 }
 
 #navbar.scrolled .navbar__logo,
-#navbar.scrolled .navbar__liens a,
+#navbar.scrolled .navbar__liens li a,
 #navbar.scrolled label i {
   color: rgb(10, 14, 23) !important;
 }
-#navbar.scrolled .navbar__liens a::after {
+#navbar.scrolled .navbar__liens li a::after {
   background-color: rgb(10, 14, 23);
 }
 
 .navbar__liens {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   width: 35%;
   right: 35px;
   position: absolute;
 }
-.navbar__liens a {
+.navbar__liens li {
   position: relative;
-  text-decoration: none;
   text-transform: uppercase;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
   transition: color 0.2s ease;
+}
+.navbar__liens li a {
+  color: #fff;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 990px) {
@@ -215,9 +220,12 @@ label,
 .presentation__reseaux {
   margin-top: 40px;
   display: flex;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
   justify-content: center;
+}
+.presentation__reseaux .fa-link {
+  font-size: 35px;
 }
 .presentation__reseaux i {
   font-size: 40px;
@@ -292,9 +300,10 @@ p {
   width: 100%;
   justify-content: center;
   gap: 20px;
+  list-style: none;
+  padding: 0;
 }
-
-#apropos a {
+.cv li {
   cursor: pointer;
   text-align: center;
   width: max-content;
@@ -309,14 +318,26 @@ p {
   text-decoration: none;
   display: block;
 }
-#apropos a:hover {
+.cv li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.cv li:hover {
   background-color: #fff;
+  color: #E12319;
+}
+.cv li:hover a {
   color: #E12319;
 }
 
 /* -------------------- COMPETENCES -------------------- */
 #competences {
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 #competences .competences__liste {
   margin: 0 auto;
@@ -328,13 +349,13 @@ p {
   text-transform: uppercase;
   text-align: center;
   font-family: "Montserrat";
-  margin: 30px 0 0px 0;
+  margin: 20px 0 0px 0;
 }
 #competences .competences__liste ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin: 8px 0;
   padding: 0;
 }
@@ -352,15 +373,19 @@ p {
   border-radius: 20px;
   border: 2px #E12319 solid;
   padding: 8px 18px;
-  transition: 0.25s;
   text-transform: uppercase;
+  transition: 0.25s;
+  user-select: none;
+}
+#competences .competences__liste ul li i {
+  font-size: 20px;
 }
 #competences .competences__liste ul li:hover {
   background-color: #fff;
   color: #E12319;
 }
-#competences .competences__liste ul li i {
-  font-size: 20px;
+#competences .competences__liste ul li:hover i {
+  color: #E12319 !important;
 }
 
 /* -------------------- PROJETS -------------------- */
@@ -369,7 +394,7 @@ p {
   padding-top: 20vh;
 }
 
-.devCard {
+.realisations__card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -383,11 +408,11 @@ p {
   margin-bottom: 60px;
   transition: 0.25s;
 }
-.devCard:hover {
-  transform: scale(1.05);
+.realisations__card:hover {
+  transform: scale(1.02);
 }
 
-.devLegende {
+.realisations-card__legende {
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -396,39 +421,40 @@ p {
   gap: 15px;
   background-color: #070e13;
   border-radius: 27px 0 0 27px;
+  user-select: none;
 }
-.devLegende .devTechno {
+.realisations-card__legende .realisations-card__techno {
   display: flex;
   gap: 15px;
 }
-.devLegende .devTechno i {
+.realisations-card__legende .realisations-card__techno i {
   font-size: 25px;
   color: #fff;
 }
-.devLegende h3 {
+.realisations-card__legende h3 {
   position: relative;
   color: #fff;
   margin: 0;
   font-size: 40px;
   font-family: "Montserrat";
 }
-.devLegende h5 {
+.realisations-card__legende h5 {
   color: #fff;
   margin: 0;
   font-size: 15px;
   font-family: "Outfit";
 }
-.devLegende h6 {
+.realisations-card__legende h6 {
   color: #fff;
   margin: 0;
   font-size: 12px;
   font-family: "Montserrat";
 }
-.devLegende h6 a {
+.realisations-card__legende h6 a {
   color: #fff;
   font-weight: 700;
 }
-.devLegende p {
+.realisations-card__legende p {
   margin: 0;
   font-size: 14px;
 }
@@ -452,7 +478,7 @@ p {
   background-image: url(../img/greenscore.jpg);
 }
 
-.devLiens {
+.realisations-card__liens {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -462,12 +488,12 @@ p {
   border-radius: 0 27px 27px 0;
   border-left: 3px #E12319 solid;
 }
-.devLiens i {
+.realisations-card__liens i {
   font-size: 40px !important;
   color: #fff;
   transition: 0.25s;
 }
-.devLiens i:hover {
+.realisations-card__liens i:hover {
   color: #E12319 !important;
 }
 
@@ -507,7 +533,7 @@ p {
   background-position: center;
 }
 
-#autres-realisations {
+.autres-realisations {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -515,13 +541,13 @@ p {
   margin: 0 auto;
   width: 80vw;
 }
-#autres-realisations .autresList {
+.autres-realisations .autresList {
   display: flex;
   gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
 }
-#autres-realisations .autresList .autresCard {
+.autres-realisations .autresList .autresCard {
   display: flex;
   flex-direction: column;
   height: 175px;
@@ -530,20 +556,20 @@ p {
   color: white;
   border-radius: 20px;
 }
-#autres-realisations .autresList .autresCard h6 {
+.autres-realisations .autresList .autresCard h6 {
   margin: 0;
   font-style: italic;
   font-weight: 500;
 }
-#autres-realisations .autresList .autresCard h6 a {
+.autres-realisations .autresList .autresCard h6 a {
   color: #fff;
 }
-#autres-realisations .autresList .autresCard .autresCard__img {
+.autres-realisations .autresList .autresCard .autresCard__img {
   height: 55%;
   border-radius: 18px 18px 0 0;
   border-bottom: 2px #E12319 solid;
 }
-#autres-realisations .autresList .autresCard .autresCard__img > div {
+.autres-realisations .autresList .autresCard .autresCard__img > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -553,15 +579,15 @@ p {
   border-radius: 17px 17px 0 0;
   background-color: rgba(0, 0, 0, 0.712);
 }
-#autres-realisations .autresList .autresCard .autresCard__img > div i {
+.autres-realisations .autresList .autresCard .autresCard__img > div i {
   font-size: 26px;
   color: #fff;
   transition: 0.25s;
 }
-#autres-realisations .autresList .autresCard .autresCard__img > div i:hover {
+.autres-realisations .autresList .autresCard .autresCard__img > div i:hover {
   color: #E12319;
 }
-#autres-realisations .autresList .autresCard .autresCard__legende {
+.autres-realisations .autresList .autresCard .autresCard__legende {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -570,8 +596,9 @@ p {
   text-align: center;
   border-radius: 0 0 18px 18px;
   transition: 0.25s;
+  user-select: none;
 }
-#autres-realisations .autresList .autresCard:hover .autresCard__legende {
+.autres-realisations .autresList .autresCard:hover .autresCard__legende {
   background-color: #fff;
   color: #E12319;
 }
@@ -583,7 +610,8 @@ p {
   text-align: center;
   margin-top: 20vh;
 }
-#travaux_mmi > div {
+#travaux_mmi > div,
+#travaux_mmi ul {
   display: flex;
   justify-content: center;
 }
@@ -689,16 +717,20 @@ footer {
 
 /* -------------------- NTH CHILD -------------------- */
 @media screen and (min-width: 990px) {
-  .devCard:nth-child(odd) .devLiens {
+  .realisations__card:nth-child(odd) .realisations-card__liens {
     border-radius: 27px 0 0 27px;
     grid-row: 1;
     border-left: 0;
   }
-  .devCard:nth-child(odd) .devLegende {
+  .realisations__card:nth-child(odd) .realisations-card__legende {
     border-radius: 0 27px 27px 0;
     border-left: 3px #E12319 solid;
   }
 }
+.competences__liste:nth-child(3) {
+  margin-bottom: 20px !important;
+}
+
 /* -------------------- MOBILE -------------------- */
 @media screen and (max-width: 1300px) {
   .navbar__liens {
@@ -713,7 +745,7 @@ footer {
     border-bottom: 3px #E12319 solid;
   }
   .navbar__liens {
-    display: none;
+    display: none !important;
   }
   .navbar__logo {
     color: rgb(10, 14, 23);
@@ -741,6 +773,7 @@ footer {
     right: 100px !important;
   }
   #toggle:checked + .navbar__liens {
+    display: flex !important;
     justify-content: center;
     background-color: #fff;
     gap: 100px;
@@ -751,12 +784,16 @@ footer {
     width: 100%;
     right: 0;
     border-bottom: 3px #E12319 solid;
+    margin: 0;
   }
-  #toggle:checked + .navbar__liens a {
+  #toggle:checked + .navbar__liens li {
     color: rgb(10, 14, 23) !important;
   }
+  #toggle:checked + .hidden {
+    display: none;
+  }
   body.no-scroll {
-    overflow: hidden;
+    overflow-y: hidden !important;
   }
   #presentation {
     padding-bottom: 30px;
@@ -764,6 +801,9 @@ footer {
   }
   h2 {
     font-size: 35px;
+  }
+  #competences {
+    min-height: auto;
   }
   #realisations h2 {
     width: 80%;
@@ -786,6 +826,7 @@ footer {
     grid-template-rows: 1fr 1fr;
     gap: 45px;
     margin-bottom: 20vh;
+    height: none;
   }
   .apropos__contenu {
     width: 70%;
@@ -794,45 +835,45 @@ footer {
   #apropos p {
     font-size: 15px;
   }
-  .devCard {
+  .realisations__card {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr;
     min-height: 75vh;
   }
-  .devLegende {
+  .realisations-card__legende {
     padding-left: 0;
     text-align: center;
     padding: 15px;
     border-radius: 27px 27px 0 0;
   }
-  .devLegende .devTechno {
+  .realisations-card__legende .realisations-card__techno {
     justify-content: center;
   }
-  .devLegende h3 {
+  .realisations-card__legende h3 {
     font-size: 35px;
   }
-  .devLegende h5 {
+  .realisations-card__legende h5 {
     font-size: 16px;
   }
-  .devLegende h6 {
+  .realisations-card__legende h6 {
     font-size: 11px;
   }
-  .devLegende p {
+  .realisations-card__legende p {
     font-size: 15px;
     line-height: 22px;
     width: 90%;
     margin: 0 auto;
   }
-  .devLegende > .membres {
+  .realisations-card__legende > .membres {
     text-align: center;
     font-size: 10px;
   }
-  .devLiens {
+  .realisations-card__liens {
     border-radius: 0 0 27px 27px;
     border-left: 0;
     border-top: 3px #E12319 solid;
   }
-  .devLiens a {
+  .realisations-card__liens a {
     margin: 0 50px !important;
   }
   #travaux_mmi > div {

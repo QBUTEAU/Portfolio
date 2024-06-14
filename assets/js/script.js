@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggleIcon = document.getElementById('icon');
   var navbarLinks = document.querySelector('.navbar__liens');
   var navLinks = navbarLinks.querySelectorAll('a');
+  var backToTopButton = document.getElementById('backToTop');
+
   // Fonction pour mettre à jour l'icône
   function updateToggleIcon() {
     if (toggleButton.checked) {
@@ -44,18 +46,25 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleIcon.classList.add('fa-bars');
     }
   }
-  // Ajoutez un gestionnaire d'événements de clic au bouton toggle
-  toggleButton.addEventListener('change', function () {
+
+  // Fonction pour gérer l'affichage de la barre de navigation
+  function handleToggle() {
     // Vérifiez si le toggle est coché
     if (toggleButton.checked) {
       // Si le toggle est coché, affichez la barre de navigation en flex
       navbarLinks.style.display = 'flex';
+      backToTopButton.style.display = 'none';
     } else {
       // Sinon, masquez la barre de navigation
       navbarLinks.style.display = 'none';
+      backToTopButton.style.display = 'block';
     }
     updateToggleIcon();
-  });
+  }
+
+  // Ajoutez un gestionnaire d'événements de clic au bouton toggle
+  toggleButton.addEventListener('change', handleToggle);
+
   // Ajoutez des gestionnaires d'événements de clic aux liens de navigation
   navLinks.forEach(function (link) {
     link.addEventListener('click', function () {
@@ -67,9 +76,31 @@ document.addEventListener('DOMContentLoaded', function () {
       updateToggleIcon();
     });
   });
+
   // Initialisez l'icône au chargement de la page
   updateToggleIcon();
+
+  // Fonction pour gérer les changements de taille d'écran
+  function handleResize() {
+    var mediaQuery = window.matchMedia('(max-width: 990px)');
+    if (mediaQuery.matches) {
+      // Écran de moins de 990px
+      // Afficher/Masquer la barre de navigation en fonction du toggle
+      handleToggle();
+    } else {
+      // Écran de plus de 990px
+      // Toujours afficher la barre de navigation
+      navbarLinks.style.display = 'flex';
+    }
+  }
+
+  // Ajouter un écouteur pour les changements de taille d'écran
+  window.addEventListener('resize', handleResize);
+
+  // Appeler handleResize au chargement de la page
+  handleResize();
 });
+
 
 
 

@@ -10,6 +10,7 @@ $blancFonce: #ffffffc6;
 
 html {
     scroll-behavior: smooth;
+    user-select: none;
 }
 
 body {
@@ -37,11 +38,6 @@ body {
     background: $rougeFonce1;
 }
 
-::selection {
-    background-color: $rouge;
-    color: $blanc;
-}
-
 html.lenis,
 html.lenis body {
     height: auto;
@@ -61,6 +57,13 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
     pointer-events: none;
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 /* ----- HEADER ----- */
@@ -144,32 +147,36 @@ html.lenis body {
 #navbar.scrolled {
 
     .navbar__logo,
-    .navbar__liens a,
+    .navbar__liens li a,
     label i {
         color: $noir !important;
     }
 
-    .navbar__liens a::after {
+    .navbar__liens li a::after {
         background-color: $noir;
     }
 }
 
 .navbar__liens {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     width: 35%;
     right: 35px;
     position: absolute;
 
-    a {
+    li {
         position: relative;
-        text-decoration: none;
         text-transform: uppercase;
         color: $blanc;
         font-size: 14px;
         font-weight: bold;
         transition: color 0.2s ease;
+
+        a {
+            color: $blanc;
+            text-decoration: none;
+        }
     }
 }
 
@@ -241,9 +248,13 @@ label,
 .presentation__reseaux {
     margin-top: 40px;
     display: flex;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
     justify-content: center;
+
+    .fa-link {
+        font-size: 35px;
+    }
 
     i {
         font-size: 40px;
@@ -334,34 +345,49 @@ p {
     width: 100%;
     justify-content: center;
     gap: 20px;
+    list-style: none;
+    padding: 0;
 
-}
+    li {
+        cursor: pointer;
+        text-align: center;
+        width: max-content;
+        border: 2px $rouge solid;
+        border-radius: 20px;
+        padding: 8px 30px;
+        font-weight: bold;
+        color: $blanc;
+        background-color: $noir;
+        font-family: 'Montserrat';
+        transition: 0.25s;
+        text-decoration: none;
+        display: block;
 
-#apropos a {
-    cursor: pointer;
-    text-align: center;
-    width: max-content;
-    border: 2px $rouge solid;
-    border-radius: 20px;
-    padding: 8px 30px;
-    font-weight: bold;
-    color: $blanc;
-    background-color: $noir;
-    font-family: 'Montserrat';
-    transition: 0.25s;
-    text-decoration: none;
-    display: block;
+        a {
+            color: $blanc;
+            text-decoration: none;
+            transition: 0.25s;
+        }
 
-    &:hover {
-        background-color: $blanc;
-        color: $rouge;
+        &:hover {
+            background-color: $blanc;
+            color: $rouge;
+
+            a {
+                color: $rouge;
+            }
+        }
     }
 }
 
 /* -------------------- COMPETENCES -------------------- */
 
 #competences {
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     .competences__liste {
         margin: 0 auto;
@@ -373,14 +399,14 @@ p {
             text-transform: uppercase;
             text-align: center;
             font-family: 'Montserrat';
-            margin: 30px 0 0px 0;
+            margin: 20px 0 0px 0;
         }
 
         ul {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin: 8px 0;
             padding: 0;
 
@@ -398,16 +424,21 @@ p {
                 border-radius: 20px;
                 border: 2px $rouge solid;
                 padding: 8px 18px;
-                transition: 0.25s;
                 text-transform: uppercase;
+                transition: 0.25s;
+                user-select: none;
+
+                i {
+                    font-size: 20px;
+                }
 
                 &:hover {
                     background-color: $blanc;
                     color: $rouge;
-                }
 
-                i {
-                    font-size: 20px;
+                    i {
+                        color: $rouge !important;
+                    }
                 }
             }
         }
@@ -421,7 +452,7 @@ p {
     padding-top: 20vh;
 }
 
-.devCard {
+.realisations__card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -436,11 +467,11 @@ p {
     transition: 0.25s;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 }
 
-.devLegende {
+.realisations-card__legende {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -449,8 +480,9 @@ p {
     gap: 15px;
     background-color: $noirFonce;
     border-radius: 27px 0 0 27px;
+    user-select: none;
 
-    .devTechno {
+    .realisations-card__techno {
         display: flex;
         gap: 15px;
 
@@ -510,7 +542,7 @@ $list_projet: mingle, circuit-library, greenscore;
     }
 }
 
-.devLiens {
+.realisations-card__liens {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,7 +577,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
     }
 }
 
-#autres-realisations {
+.autres-realisations {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -614,6 +646,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
                 text-align: center;
                 border-radius: 0 0 18px 18px;
                 transition: 0.25s;
+                user-select: none;
             }
 
             &:hover .autresCard__legende {
@@ -635,7 +668,8 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
     text-align: center;
     margin-top: 20vh;
 
-    &>div {
+    &>div,
+    ul {
         display: flex;
         justify-content: center;
     }
@@ -754,16 +788,20 @@ footer {
 /* -------------------- NTH CHILD -------------------- */
 
 @media screen and (min-width:990px) {
-    .devCard:nth-child(odd) .devLiens {
+    .realisations__card:nth-child(odd) .realisations-card__liens {
         border-radius: 27px 0 0 27px;
         grid-row: 1;
         border-left: 0;
     }
 
-    .devCard:nth-child(odd) .devLegende {
+    .realisations__card:nth-child(odd) .realisations-card__legende {
         border-radius: 0 27px 27px 0;
         border-left: 3px $rouge solid;
     }
+}
+
+.competences__liste:nth-child(3) {
+    margin-bottom: 20px !important;
 }
 
 
@@ -786,7 +824,7 @@ footer {
     }
 
     .navbar__liens {
-        display: none;
+        display: none !important;
     }
 
     .navbar__logo {
@@ -819,6 +857,7 @@ footer {
         right: 100px !important;
 
         +.navbar__liens {
+            display: flex !important;
             justify-content: center;
             background-color: $blanc;
             gap: 100px;
@@ -829,16 +868,20 @@ footer {
             width: 100%;
             right: 0;
             border-bottom: 3px $rouge solid;
+            margin: 0;
 
-            a {
+            li {
                 color: $noir !important;
             }
+        }
 
+        +.hidden {
+            display: none;
         }
     }
 
     body.no-scroll {
-        overflow: hidden;
+        overflow-y: hidden !important;
     }
 
 
@@ -849,6 +892,10 @@ footer {
 
     h2 {
         font-size: 35px;
+    }
+
+    #competences {
+        min-height: auto;
     }
 
     #realisations h2 {
@@ -875,6 +922,7 @@ footer {
         grid-template-rows: 1fr 1fr;
         gap: 45px;
         margin-bottom: 20vh;
+        height: none;
     }
 
     .apropos__contenu {
@@ -886,19 +934,19 @@ footer {
         font-size: 15px;
     }
 
-    .devCard {
+    .realisations__card {
         grid-template-columns: 1fr;
         grid-template-rows: 2fr 1fr;
         min-height: 75vh;
     }
 
-    .devLegende {
+    .realisations-card__legende {
         padding-left: 0;
         text-align: center;
         padding: 15px;
         border-radius: 27px 27px 0 0;
 
-        .devTechno {
+        .realisations-card__techno {
             justify-content: center;
         }
 
@@ -927,7 +975,7 @@ footer {
         }
     }
 
-    .devLiens {
+    .realisations-card__liens {
         border-radius: 0 0 27px 27px;
         border-left: 0;
         border-top: 3px $rouge solid;
