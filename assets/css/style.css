@@ -151,29 +151,18 @@ ul {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease;
 }
 .navbar__liens li a {
   color: #fff;
   text-decoration: none;
 }
-
-@media screen and (min-width: 990px) {
-  a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-  }
-  a::after:hover::after {
-    width: 100%;
-  }
+.navbar__liens li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-underline-thickness: 2px;
 }
+
 label,
 #toggle {
   display: none;
@@ -192,7 +181,8 @@ label,
 }
 
 @media screen and (min-width: 990px) {
-  #presentation #apropos {
+  #presentation,
+  #apropos {
     height: 100vh;
   }
 }
@@ -383,6 +373,7 @@ p {
 }
 #competences .competences__liste ul li i {
   font-size: 20px;
+  transition: 0.25s;
 }
 #competences .competences__liste ul li:hover {
   background-color: #fff;

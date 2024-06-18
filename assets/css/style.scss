@@ -171,32 +171,38 @@ ul {
         color: $blanc;
         font-size: 14px;
         font-weight: bold;
-        transition: color 0.2s ease;
+        transition: color 0.25s ease;
 
         a {
             color: $blanc;
             text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                text-underline-thickness: 2px;
+            }
         }
     }
 }
 
-@media screen and (min-width:990px) {
-    a::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background-color: $blanc;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: width 0.3s ease;
+// @media screen and (min-width:990px) {
+//     .navbar__liens li a::after {
+//         content: "";
+//         position: absolute;
+//         width: 0;
+//         height: 2px;
+//         background-color: $blanc;
+//         bottom: -5px;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         transition: width 0.3s ease;
 
-        &:hover::after {
-            width: 100%;
-        }
-    }
-}
+//         &:hover::after {
+//             width: 100%;
+//         }
+//     }
+// }
 
 label,
 #toggle {
@@ -217,7 +223,9 @@ label,
 }
 
 @media screen and (min-width:990px) {
-    #presentation #apropos {
+
+    #presentation,
+    #apropos {
         height: 100vh;
     }
 }
@@ -435,6 +443,7 @@ p {
 
                 i {
                     font-size: 20px;
+                    transition: 0.25s;
                 }
 
                 &:hover {
