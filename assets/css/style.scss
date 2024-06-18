@@ -206,14 +206,20 @@ label,
 /* ----- PRESENTATION ----- */
 
 #presentation,
-#apropos {
+#apropos,
+#competences {
     display: flex;
     justify-content: center;
     align-items: center;
     color: $blanc;
     margin: 0 auto;
     width: 100vw;
-    height: 100vh;
+}
+
+@media screen and (min-width:990px) {
+    #presentation #apropos {
+        height: 100vh;
+    }
 }
 
 #presentation {
@@ -383,7 +389,6 @@ p {
 /* -------------------- COMPETENCES -------------------- */
 
 #competences {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -669,8 +674,9 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
     margin-top: 20vh;
 
     &>div,
-    ul {
+    .travaux-mmi__modules {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
@@ -870,7 +876,7 @@ footer {
             border-bottom: 3px $rouge solid;
             margin: 0;
 
-            li {
+            li a {
                 color: $noir !important;
             }
         }
@@ -920,9 +926,7 @@ footer {
         justify-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 45px;
-        margin-bottom: 20vh;
-        height: none;
+        margin-bottom: 15vh;
     }
 
     .apropos__contenu {

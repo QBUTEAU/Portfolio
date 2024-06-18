@@ -181,16 +181,21 @@ label,
 
 /* ----- PRESENTATION ----- */
 #presentation,
-#apropos {
+#apropos,
+#competences {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   margin: 0 auto;
   width: 100vw;
-  height: 100vh;
 }
 
+@media screen and (min-width: 990px) {
+  #presentation #apropos {
+    height: 100vh;
+  }
+}
 #presentation {
   flex-direction: column;
 }
@@ -333,7 +338,6 @@ p {
 
 /* -------------------- COMPETENCES -------------------- */
 #competences {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -611,8 +615,9 @@ p {
   margin-top: 20vh;
 }
 #travaux_mmi > div,
-#travaux_mmi ul {
+#travaux_mmi .travaux-mmi__modules {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 #travaux_mmi .liens_travaux {
@@ -786,7 +791,7 @@ footer {
     border-bottom: 3px #E12319 solid;
     margin: 0;
   }
-  #toggle:checked + .navbar__liens li {
+  #toggle:checked + .navbar__liens li a {
     color: rgb(10, 14, 23) !important;
   }
   #toggle:checked + .hidden {
@@ -824,9 +829,7 @@ footer {
     justify-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 45px;
-    margin-bottom: 20vh;
-    height: none;
+    margin-bottom: 15vh;
   }
   .apropos__contenu {
     width: 70%;

@@ -176,7 +176,7 @@ const sr = ScrollReveal({
 sr.reveal(`.apropos__contenu`, { origin: 'left' });
 sr.reveal(`.apropos__photo`, { origin: 'right' });
 sr.reveal(`.competences__liste`, { interval: '100' });
-sr.reveal(`.devCard`, { interval: '100' });
+sr.reveal(`.realisations__card`, { interval: '100' });
 sr.reveal(`.liens_travaux`, { origin: 'bottom', interval: '100' });
 sr.reveal(`.autresCard`, { interval: '100' });
 
