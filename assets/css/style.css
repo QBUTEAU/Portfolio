@@ -78,7 +78,7 @@ ul {
   transition: 0.2s;
 }
 #backToTop:hover i {
-  transform: translate(0, -7px);
+  transform: translate(0, -4px);
 }
 
 #copy-popup {
@@ -319,11 +319,7 @@ p {
   transition: 0.25s;
 }
 .cv li:hover {
-  background-color: #fff;
-  color: #E12319;
-}
-.cv li:hover a {
-  color: #E12319;
+  background-color: #E12319;
 }
 
 /* -------------------- COMPETENCES -------------------- */
@@ -376,11 +372,10 @@ p {
   transition: 0.25s;
 }
 #competences .competences__liste ul li:hover {
-  background-color: #fff;
-  color: #E12319;
+  background-color: #E12319;
 }
 #competences .competences__liste ul li:hover i {
-  color: #E12319 !important;
+  color: #fff !important;
 }
 
 /* -------------------- PROJETS -------------------- */
@@ -594,8 +589,7 @@ p {
   user-select: none;
 }
 .autres-realisations .autresList .autresCard:hover .autresCard__legende {
-  background-color: #fff;
-  color: #E12319;
+  background-color: #E12319;
 }
 
 /* -------------------- TRAVAUX -------------------- */
@@ -628,8 +622,7 @@ p {
   transition: 0.25s;
 }
 #travaux_mmi .liens_travaux:hover {
-  background-color: #fff;
-  color: #E12319;
+  background-color: #E12319;
 }
 #travaux_mmi p {
   text-align: center;

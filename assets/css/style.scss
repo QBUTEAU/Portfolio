@@ -91,7 +91,7 @@ ul {
     }
 
     &:hover i {
-        transform: translate(0, -7px);
+        transform: translate(0, -4px);
     }
 }
 
@@ -384,12 +384,7 @@ p {
         }
 
         &:hover {
-            background-color: $blanc;
-            color: $rouge;
-
-            a {
-                color: $rouge;
-            }
+            background-color: $rouge;
         }
     }
 }
@@ -447,11 +442,10 @@ p {
                 }
 
                 &:hover {
-                    background-color: $blanc;
-                    color: $rouge;
+                    background-color: $rouge;
 
                     i {
-                        color: $rouge !important;
+                        color: $blanc !important;
                     }
                 }
             }
@@ -664,9 +658,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
             }
 
             &:hover .autresCard__legende {
-                background-color: $blanc;
-                color: $rouge;
-
+                background-color: $rouge;
             }
         }
     }
@@ -707,8 +699,7 @@ $list-autres: unity, webdoc, styleselector, sae303, formula-pedia;
         transition: 0.25s;
 
         &:hover {
-            background-color: $blanc;
-            color: $rouge;
+            background-color: $rouge;
         }
     }
 
